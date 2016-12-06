@@ -9,8 +9,8 @@
 
 <body>
 
-    <nav class="flex"> 
-        nav    
+    <nav class="flex">
+        nav
         <h1>Mem-Hive</h1>
         <img class="ImgArrow" src="img/nav_arrow.png">
     </nav>
@@ -24,50 +24,54 @@
             <div class="gallery flex flex-wrap">
                 <!--Hexagons renders here-->
             </div>
-    </main>
+        </main>
 
-    <section class="memeGen flex space-around align-center flex-wrap">
-        Editor
-        <div class="img-responsive img">
-
-        </div>
-        <div class="tools">
-            <input type="text"></input>
-        </div>
-    </section>
-
-    <summary class="about">
-        <div>
-            <img class="img-responsive" src="" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus maiores saepe iure asperiores alias laudantium,
-                consectetur omnis fuga provident dolorum eos nesciunt optio accusamus praesentium aliquam quos perferendis
-                cumque tempora.</p>
-        </div>
-        <div>
-            <img class="img-responsive" src="" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis corporis porro minus, sequi doloremque.
-                Facere sequi, distinctio, atque asperiores eveniet eligendi vero illum pariatur rerum deleniti itaque magni
-                est neque.</p>
-        </div>
-    </summary>
-
-    <div class="contact flex space-around">
-        <form>
-            <div class="form-group">
-                <label for="pwd">Name:</label>
-                <input type="name" class="form-control" id="name">
+        <section class="memeGen flex space-around align-center flex-wrap">
+            Editor
+            <div class="img-responsive img">
+                <canvas width="400" height="300" id="canvas">Sorry, no canvas available</canvas>
+                <br/>
+                <a id="download" onclick="downloadImg(this)">
+                     Download as image
+                </a>
             </div>
-            <div class="form-group">
-                <label for="email">Email address:</label>
-                <input type="email" class="form-control" id="email">
+            <div class="tools">
+                <input type="text"></input>
             </div>
-            <div class="form-group">
-                <label for="pwd"></label>
-                <input type="name" class="form-control" id="name">
+        </section>
+
+        <summary class="about">
+            <div>
+                <img class="img-responsive" src="" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus maiores saepe iure asperiores alias
+                    laudantium, consectetur omnis fuga provident dolorum eos nesciunt optio accusamus praesentium aliquam
+                    quos perferendis cumque tempora.</p>
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-    </div>
+            <div>
+                <img class="img-responsive" src="" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis corporis porro minus, sequi doloremque.
+                    Facere sequi, distinctio, atque asperiores eveniet eligendi vero illum pariatur rerum deleniti itaque
+                    magni est neque.</p>
+            </div>
+        </summary>
+
+        <div class="contact flex space-around">
+            <form>
+                <div class="form-group">
+                    <label for="pwd">Name:</label>
+                    <input type="name" class="form-control" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address:</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="pwd"></label>
+                    <input type="name" class="form-control" id="name">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
 
     </section>
     <footer>

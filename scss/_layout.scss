@@ -8,21 +8,50 @@
 main {
   height: 700px;
 }
+
 .memeGen {
   width: 100%;
   background-color: var(--sections-bg);
-  height: 500px;
+  .img {
+    height: 300px;
+    width: 400px;
+    background-color: blue;  
+  }
+  .tools {
+    height: 300px;
+    width: 400px;
+    background-color: red;  
+  }
 }
+
 .about {
-   width: 100%;
-  background-color: lightblue;
-  height: 345px;
+  width: 100%;
+  background-color: lightgreen;
+  img {
+    height: 150px;
+    width: 150px;
+    background-color: red;
+    margin: 10px;
+  }
+  p{
+    color: white;
+  }
+  div {
+    width: 30%;
+    height: 400px;
+    float: left;
+    margin: 50px;
+  }
+  div:last-child {
+    float: right;
+  }
 }
+
 .contact {
    width: 100%;
   background-color: var(--sections-bg);
-  height: 555px;
 }
+
 footer {
    width: 100%;
   background-color: lightblue;

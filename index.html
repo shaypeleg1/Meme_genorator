@@ -2,37 +2,68 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>Meme Generator</title>
-  <link rel="stylesheet" href="dist/style.css">
+    <meta charset="UTF-8">
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="dist/style.css">
 </head>
 
 <body>
-    <nav> 
-        nav      
+    <nav>
+        nav
     </nav>
 
     <main class="mainPreview container">
         main
     </main>
 
-    <section class="memeGen">
-        meme gen
+    <section class="memeGen flex space-around align-center flex-wrap">
+        Editor
+        <div class="img-responsive img">
+
+        </div>
+        <div class="tools">
+            <input type="text"></input>
+        </div>
     </section>
 
     <summary class="about">
-        about
+        <div>
+            <img class="img-responsive" src="" alt="">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus maiores saepe iure asperiores alias laudantium,
+                consectetur omnis fuga provident dolorum eos nesciunt optio accusamus praesentium aliquam quos perferendis
+                cumque tempora.</p>
+        </div>
+        <div>
+            <img class="img-responsive" src="" alt="">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis corporis porro minus, sequi doloremque.
+                Facere sequi, distinctio, atque asperiores eveniet eligendi vero illum pariatur rerum deleniti itaque magni
+                est neque.</p>
+        </div>
     </summary>
 
     <div class="contact">
-        contact
+        <form>
+            <div class="form-group">
+                <label for="pwd">Name:</label>
+                <input type="name" class="form-control" id="name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email address:</label>
+                <input type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+                <label for="pwd"></label>
+                <input type="name" class="form-control" id="name">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
     </div>
 
     <footer>
         footer
     </footer>
 
- <script src="js/main.js"></script>
- </body>
+    <script src="js/main.js"></script>
+</body>
 
 </html>

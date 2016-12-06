@@ -11,7 +11,7 @@ var gMemes = [
     {
         id: 1,
         url: 'img/memes/meme_2.jpg',
-        keys: ['history'],
+        keywords: ['history'],
         rating: 0
     }
 ];
@@ -20,20 +20,35 @@ $(document).ready(function(){
     renderGallery(gMemes);
 });
 
+// clean and print new memes gallery
 function renderGallery(memes) {
-    memes.forEach(function(memObj) {
-        var hex = '<div id="'+memObj.id+'" class="hexagon"'+
+    $( ".gallery" ).empty();
+    memes.forEach(function(mem) {
+        renderHex(mem);
+    });
+}
+// print meme to hexagon
+function renderHex(memObj) {
+    var hex = '<div id="'+memObj.id+'" class="hexagon"'+
                 ' style="background-image: url('+memObj.url+')">'+
                     '<div class="hexTop"></div>'+
                     '<div class="hexBottom"></div>'+
                 '</div>';
-        var elGallery = $('.gallery').append(hex);
-    });
+    var elGallery = $('.gallery').append(hex);
 }
-
+// add new meme obj to the global
 function addNewMeme(imgUrl, keywords) {
-
+    var nextId = gMemes.length + 1;
+    var imgObj = {
+                id: nextId,
+                url: imgUrl,
+                keywords: keywords,
+                rating: 0
+                };
+    console.log(imgObj);
+    gMemes.push(imgObj);
 }
+
 // get string from user and serch if which objects key words
 // match then render only the matching objects if found any:
 function searchForKeyword(string) {
@@ -51,5 +66,9 @@ function searchForKeyword(string) {
 }
 
 function addUserMem() {
-    console.log('addUserMem button');
+    var userUrl = prompt('insert img url');
+    var userKeywordsStr = prompt('insert keywords');
+    var userKeywords = userKeywordsStr.split(',');
+    addNewMeme(userUrl,userKeywords);
+    renderHex(gMemes[gMemes.length-1]);
 }

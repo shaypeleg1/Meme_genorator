@@ -18,7 +18,7 @@
     <section>
         <main class="mainPreview container flex flex-column justify-center align-center">
             <div class="toolbar">
-                <input class="" type="text" name="search" placeholder="Search..">
+                <input class="search" type="text" name="search" placeholder="Search.." onkeyup="searchForKeyword(document.querySelector('.search').value)">
                 <button onclick="addUserMem()">Add your own mem</button>
             </div>
             <div class="gallery flex flex-wrap">
@@ -51,7 +51,7 @@
         </div>
     </summary>
 
-    <div class="contact">
+    <div class="contact flex space-around">
         <form>
             <div class="form-group">
                 <label for="pwd">Name:</label>
@@ -69,10 +69,6 @@
         </form>
     </div>
 
-
-        <div class="contact">
-            contact
-        </div>
     </section>
     <footer>
         footer

@@ -18,7 +18,7 @@
     <section>
         <main class="mainPreview container flex flex-column justify-center align-center">
             <div class="toolbar">
-                <input class="" type="text" name="search" placeholder="Search..">
+                <input class="search" type="text" name="search" placeholder="Search.." onkeyup="searchForKeyword(document.querySelector('.search').value)">
                 <button onclick="addUserMem()">Add your own mem</button>
             </div>
             <div class="gallery flex flex-wrap">

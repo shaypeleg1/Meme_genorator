@@ -11,7 +11,7 @@ var gMemes = [
     {
         id: 3,
         url: 'img3.jpg',
-        keys: ['animal'],
+        keywords: ['animal'],
         rating: 0
     }
 ];
@@ -27,7 +27,21 @@ function renderGallery(memes) {
 function addNewMeme(imgUrl, keywords) {
 
 }
-
+// get string from user and serch if which objects key words
+// match then render only the matching objects if found any:
+function searchForKeyword(string) {
+    var matchedMemes = [];
+    gMemes.forEach(function(meme) {
+        meme.keywords.forEach(function(key) {
+            if(key === string) {
+                matchedMemes.push(meme);
+            }
+        });
+    });
+    if(matchedMemes.length !== 0) {
+        renderGallery(matchedMemes);
+    }
+}
 
 
 

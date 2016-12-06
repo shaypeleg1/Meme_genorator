@@ -1,0 +1,15 @@
+/*----------  Containers  ----------*/
+
+.container {
+  width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1em;
+}
+main {
+  height: 700px;
+}
+.memeGen {
+  width: 100%;
+  background-color: var(--sections-bg);
+  height: 500px;
+}

@@ -1,12 +1,22 @@
 /*----------  Containers  ----------*/
-
+section {
+  // width: 1400px;
+  // margin:0 auto;
+}
 .container {
-  width: var(--container-width);
+  // width: var(--container-width);
   margin: 0 auto;
   padding: 0 1em;
 }
 main {
   height: 700px;
+}
+
+.toolbar {
+  height: 100px;
+}
+.gallery {
+  height: 600px;
 }
 
 .memeGen {

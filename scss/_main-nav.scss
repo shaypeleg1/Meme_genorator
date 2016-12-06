@@ -1,4 +1,23 @@
 nav {
     background-color: var(--main-color);
-    height: 65px;
+    height: 100%;
+}
+.navArrow {
+    width: 0; 
+    height: 0; 
+    border-left: 45px solid transparent;
+    border-right: 45px solid transparent;
+    border-top: 25px solid var(--main-color);
+    margin: 0 auto;
+}
+.ImgArrow {
+    width: 64px;
+    height: 55px;
+    margin: 0 auto;
+    align-self: center;
+}
+h1 {
+    color: red;
+    position: absolute;
+    float: left;
 }

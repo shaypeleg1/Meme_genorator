@@ -8,12 +8,37 @@
 </head>
 
 <body>
-    <nav>
-        nav
-    </nav>
 
-    <main class="mainPreview container">
-        main
+    <nav class="flex"> 
+        nav    
+        <h1>Mem-Hive</h1>
+        <img class="ImgArrow" src="img/nav_arrow.png">
+    </nav>
+    <div class="navArrow"></div>
+    <section>
+        <main class="mainPreview container flex flex-column justify-center align-center">
+            <div class="toolbar">
+                <input class="" type="text" name="search" placeholder="Search..">
+                <button onclick="addUserMem()">Add your own mem</button>
+            </div>
+            <div class="gallery flex flex-wrap">
+                <div id="1" class="hexagon">
+                    <div class="hexTop"></div>
+                    <div class="hexBottom"></div>
+                </div>
+                <div id="2" class="hexagon">
+                    <div class="hexTop"></div>
+                <div class="hexBottom"></div>
+                </div>
+                <div id="3" class="hexagon">
+                    <div class="hexTop"></div>
+                    <div class="hexBottom"></div>
+                </div>
+                <div id="4" class="hexagon">
+                    <div class="hexTop"></div>
+                    <div class="hexBottom"></div>
+                </div>
+            </div>
     </main>
 
     <section class="memeGen flex space-around align-center flex-wrap">
@@ -59,6 +84,11 @@
         </form>
     </div>
 
+
+        <div class="contact">
+            contact
+        </div>
+    </section>
     <footer>
         footer
     </footer>

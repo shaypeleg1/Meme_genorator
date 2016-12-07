@@ -59,20 +59,22 @@ main {
 
 .about {
   width: 100%;
-  background-color: lightgreen;
+  background-color: #2eb398;
   img {
     background-color: red;
     margin: 10px;
     border-radius: 5%;
   }
   p{
-    color: red;
+    color: white;
+    width: 30%;
   }
   div {
-    width: 30%;
-    height: 400px;
-    float: left;
-    margin: 50px;
+    // width: 100px;
+    // width: 30%;
+    // height: 400px;
+    // float: left;
+    // margin: 50px;
   }
   div:last-child {
     float: right;

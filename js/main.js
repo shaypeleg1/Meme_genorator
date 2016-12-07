@@ -57,7 +57,7 @@ $(document).ready(function(){
 
 function initCanvas() {
     var canvas;
-    canvas = document.getElementById('canvas');
+    canvas = document.querySelector('canvas');
     gCtx = canvas.getContext('2d');
 }
 
@@ -112,28 +112,6 @@ function searchForKeyword(string) {
     } else if (string === "") {
         renderGallery(gMemes);
     }
-}
-// iniate all the memes keywords rating
-function initKeywordRating(memes) {
-    var keywordsRate = {};
-    memes.forEach(function(mem) {
-        mem.keywords.forEach(function(keyword) {
-            keywordsRate[keyword] = 0;
-        });
-    });
-    return keywordsRate;
-}
-// draw keyword cloud
-function drawKeywordCloud(keywordsObj) {
-    $( ".common-search" ).empty();
-    Object.keys(keywordsObj).forEach(function(keyword) {
-        var fontSize = keywordsObj[keyword] * 10;
-        var searchTag ='<div id="'+keyword+
-                        '" style="font-size:'+fontSize+
-                        'px">'+keyword+
-                        '</div>';
-        var elGallery = $('.common-search').append(searchTag);
-    });
 }
 
 // sort and print hexgons by rating prop

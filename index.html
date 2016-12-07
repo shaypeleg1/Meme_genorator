@@ -32,7 +32,7 @@
 
         <section class="memeGen flex space-around align-center flex-wrap">
 
-            <canvas id="canvas" class="">Sorry, no canvas available</canvas>
+            <canvas id="canvas">Sorry, no canvas available</canvas>
             <br/>
 
             <div class="tools flex flex-column space-around ">
@@ -41,7 +41,7 @@
 
                 <div class="tools__container flex flex-column space-around">
                     <div>
-                        <input class="textTop" type="text" placeholder="Type Top Text Here.."></input>
+                        <input class="textTop" type="text" placeholder="Type Top Text Here.." onkeyup="drawTextOnCanvas(this.value, this.classList.value)"></input>
 
                         <button>
                            <i class="fa fa-align-left" aria-hidden="true"></i>
@@ -69,7 +69,7 @@
                         </button>
                     </div>
                     <div>
-                        <input class="textBottom" type="text" placeholder="Type Bottom Text Here.."></input>
+                        <input class="textBottom" type="text" placeholder="Type Bottom Text Here.." onkeyup="drawTextOnCanvas(this.value, this.classList.value)"></input>
                         <div>
                             <button>
                                 <i class="fa fa-align-left" aria-hidden="true"></i>

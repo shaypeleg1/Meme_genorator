@@ -20,15 +20,16 @@ $(document).ready(function(){
     renderGallery(gMemes);
     initCanvas();
 
-    $(".hexagon").click(function(node){
-        var strUrl = node.currentTarget.style.backgroundImage;
-        strUrl = strUrl.substr(5,strUrl.length-7);
-        console.log(node);
-        
-        drawImgOnCanvas(strUrl);
-    });
+    // $(".hexagon").click(function(node){
+    //     var strUrl = node.currentTarget.style.backgroundImage;
+    //     // TODO find better 
+    //     console.log(node);
+    //     strUrl = strUrl.substr(5,strUrl.length-7);
+    //     drawImgOnCanvas(strUrl);
+    // });
 
 });
+
 
 function initCanvas() {
     var canvas;
@@ -36,27 +37,42 @@ function initCanvas() {
     gCtx = canvas.getContext('2d');
 }
 
+// clean and print new memes gallery
 function renderGallery(memes) {
-    memes.forEach(function(memObj) {
-        var hex = '<div id="'+memObj.id+'" class="hexagon"'+
-                ' style="background-image: url('+memObj.url+')">' +
+    
+    $( ".gallery" ).empty();
+    memes.forEach(function(mem) {
+        renderHex(mem);
+    });
+}
+// print meme to hexagon
+function renderHex(memObj) {
+    var hex = '<div id="'+memObj.id+'" class="hexagon"'+
+                ' style="background-image: url('+memObj.url+')" onclick="drawImgOnCanvas(this)">'+
                     '<div class="hexTop"></div>'+
                     '<div class="hexBottom"></div>'+
                 '</div>';
-        var elGallery = $('.gallery').append(hex);
-    });
+    var elGallery = $('.gallery').append(hex);
 }
-
+// add new meme obj to the global
 function addNewMeme(imgUrl, keywords) {
-
+    var nextId = gMemes.length + 1;
+    var imgObj = {
+                id: nextId,
+                url: imgUrl,
+                keywords: keywords,
+                rating: 0
+                };
+    console.log(imgObj);
+    gMemes.push(imgObj);
 }
+
 // get string from user and serch if which objects key words
 // match then render only the matching objects if found any:
 function searchForKeyword(string) {
     var matchedMemes = [];
     gMemes.forEach(function(meme) {
         meme.keywords.forEach(function(key) {
-            
             if(key === string) {
                 matchedMemes.push(meme);  
             }
@@ -68,16 +84,40 @@ function searchForKeyword(string) {
 }
 
 function addUserMem() {
-    console.log('addUserMem button');
+
+
+    var userUrl = prompt('insert img url');
+    var userKeywordsStr = prompt('insert keywords');
+    var userKeywords = userKeywordsStr.split(',');
+    addNewMeme(userUrl,userKeywords);
+    renderHex(gMemes[gMemes.length-1]);
 }
 
-function drawImgOnCanvas(imgUrl) {
-    console.log('img pressed!' , imgUrl);
-    var img = new Image();
-    img.src = imgUrl;
 
-    gCtx.drawImage(img, 0, 0, 400, 300);
-    gCtx.font = "60px 'Segoe UI'";
-    gCtx.fillText("print on Canvas", 50, 300);
+function drawImgOnCanvas(element) {
+    var currMeme = gMemes.find(function(meme) {
+        return meme.id === parseInt(element.id);
+    });
+    
+    console.log('img pressed!' ,currMeme.url );
+    var img = new Image();
+    img.src = currMeme.url;
+
+    console.log('',img);
+    
+    
+    var imgx = img.width;
+    var imgy = img.height;
+
+    
+
+    var elCanvas = document.querySelector('#canvas');
+    elCanvas.width = imgx;
+    elCanvas.height = imgy;
+
+    // debugger;
+    gCtx.drawImage(img, 0, 0, imgx, imgy);
+    // gCtx.font = "60px 'Segoe UI'";
+    // gCtx.fillText("print on Canvas", 50, 300);
 
 }

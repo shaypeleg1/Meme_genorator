@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Meme Generator</title>
     <link rel="stylesheet" href="dist/style.css">
+    <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -19,33 +20,86 @@
         <main class="mainPreview container flex flex-column justify-center align-center">
             <div class="toolbar">
                 <input class="search" type="text" name="search" placeholder="Search.." onkeyup="searchForKeyword(document.querySelector('.search').value)">
-                <button onclick="addUserMem()">Add your own mem</button>
+                <button onclick="addUserMem()" class="btn">Add your own mem</button>
             </div>
             <ul class="gallery clr">
                 <!--Hexagons renders here-->
             </ul>
 
-    </main>
+        </main>
 
         <section class="memeGen flex space-around align-center flex-wrap">
 
             <canvas id="canvas" class="">Sorry, no canvas available</canvas>
             <br/>
-            <a id="download" onclick="downloadImg(this)">
-                    Download as image
-            </a>
-            
+
             <div class="tools flex flex-column space-around ">
 
-                <button>back to choose another meme</button>
+                <button class="btn">back to choose another meme</button>
 
                 <div class="tools__container flex flex-column space-around">
-                    <input type="text" placeholder="Type Top Text Here.."></input>
+                    <div>
+                        <input type="text" placeholder="Type Top Text Here.."></input>
 
-                    <input type="text" placeholder="Type Bottom Text Here.."></input>
+
+                        <button>
+                           <i class="fa fa-align-left" aria-hidden="true"></i>
+                        </button>
+                        <button>
+                            <i class="fa fa-align-center" aria-hidden="true"></i>
+                        </button>
+                        <button>
+                          <i class="fa fa-align-right" aria-hidden="true"></i>
+                        </button>
+                        <button>
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </button>
+                        <button>
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </button>
+                        <button>
+                            <i class="fa fa-tint" aria-hidden="true"></i>
+                        </button>
+
+                        <button>A</button>
+
+                        <button>
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Type Bottom Text Here.."></input>
+                        <div>
+                            <button>
+                                <i class="fa fa-align-left" aria-hidden="true"></i>
+                            </button>
+                            <button>
+                                <i class="fa fa-align-center" aria-hidden="true"></i>
+                            </button>
+                            <button>
+                                <i class="fa fa-align-right" aria-hidden="true"></i>
+                            </button>
+                            <button>
+                                <i class="fa fa-minus" aria-hidden="true"></i>
+                            </button>
+                            <button>
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </button>
+                            <button>
+                                <i class="fa fa-tint" aria-hidden="true"></i>
+                            </button>
+
+                            <button>A</button>
+
+                            <button>
+                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-
-            </div>
+            <button id="download" onclick="downloadImg(this)">
+                    Download as image<i class="fa fa-download" aria-hidden="true"></i>
+            </button>
         </section>
 
         <summary class="about">
@@ -87,6 +141,7 @@
     </footer>
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/text-tools.js"></script>
 </body>
 
 </html>

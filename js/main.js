@@ -118,6 +118,7 @@ function drawImgOnCanvas(element) {
     elCanvas.height = imgy;
 
     gCtx.drawImage(img, 0, 0, imgx, imgy);
-
+    gCtx.font = "60px 'Segoe UI'";
+    gCtx.fillText("print on Canvas", 50, 300);
 
 }

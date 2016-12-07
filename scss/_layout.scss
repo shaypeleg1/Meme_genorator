@@ -29,10 +29,14 @@ main {
     background-color: blue;  
   }
   .tools {
-    max-height: 40%;
     max-width: 55%;
+    height: 100%;
     background-color: red;  
+    .tools__container {
+      height: 300px;
+    }
   }
+
   #canvas {
     max-height: 80%;
     max-width: 55%;
@@ -44,10 +48,9 @@ main {
   width: 100%;
   background-color: lightgreen;
   img {
-    height: 150px;
-    width: 150px;
     background-color: red;
     margin: 10px;
+    border-radius: 5%;
   }
   p{
     color: red;
@@ -60,6 +63,9 @@ main {
   }
   div:last-child {
     float: right;
+  }
+  .img__shay {
+    // padding-top: 30px;
   }
 }
 

@@ -97,8 +97,11 @@ function searchForKeyword(string) {
             }
         });
     });
+    
     if(matchedMemes.length !== 0) {
         renderGallery(matchedMemes);
+    } else if (string === "") {
+        renderGallery(gMemes);
     }
 }
 // sort and print hexgons by rating prop
@@ -124,6 +127,7 @@ function memClick(elMem) {
     drawImgOnCanvas(currMeme.url);
     currMeme.rating++;
 }
+
 function drawImgOnCanvas(imgUrlStr) {
     var img = new Image();
     img.src = imgUrlStr;
@@ -140,9 +144,7 @@ function drawImgOnCanvas(imgUrlStr) {
     elCanvas.width = imgx;
     elCanvas.height = imgy;
 
-    // debugger;
     gCtx.drawImage(img, 0, 0, imgx, imgy);
-    // gCtx.font = "60px 'Segoe UI'";
-    // gCtx.fillText("print on Canvas", 50, 300);
+
 
 }

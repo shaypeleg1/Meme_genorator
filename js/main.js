@@ -78,8 +78,11 @@ function searchForKeyword(string) {
             }
         });
     });
+    
     if(matchedMemes.length !== 0) {
         renderGallery(matchedMemes);
+    } else if (string === "") {
+        renderGallery(gMemes);
     }
 }
 
@@ -99,7 +102,6 @@ function drawImgOnCanvas(element) {
         return meme.id === parseInt(element.id);
     });
     
-    console.log('img pressed!' ,currMeme.url );
     var img = new Image();
     img.src = currMeme.url;
 
@@ -115,9 +117,7 @@ function drawImgOnCanvas(element) {
     elCanvas.width = imgx;
     elCanvas.height = imgy;
 
-    // debugger;
     gCtx.drawImage(img, 0, 0, imgx, imgy);
-    // gCtx.font = "60px 'Segoe UI'";
-    // gCtx.fillText("print on Canvas", 50, 300);
+
 
 }

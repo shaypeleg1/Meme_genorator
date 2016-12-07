@@ -29,11 +29,11 @@ function renderGallery(memes) {
 }
 // print meme to hexagon
 function renderHex(memObj) {
-    var hex = '<div id="'+memObj.id+'" class="hexagon"'+
-                ' style="background-image: url('+memObj.url+')">'+
-                    '<div class="hexTop"></div>'+
-                    '<div class="hexBottom"></div>'+
-                '</div>';
+    var hex = '<li><div>'+
+                '<img id="'+ memObj.id +
+                '" src="'+memObj.url+
+                '" alt="'+memObj.keywords+'"'+
+                ' /> </div></li>';
     var elGallery = $('.gallery').append(hex);
 }
 // add new meme obj to the global

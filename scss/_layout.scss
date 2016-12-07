@@ -9,15 +9,17 @@ section {
   padding: 0 1em;
 }
 main {
-  height: 700px;
+
 }
 
 .toolbar {
   height: 100px;
 }
-
-
-
+.common-search {
+  height: 200px;
+  width: 100%;
+  background-color: lightgray;
+}
 .memeGen {
   width: 100%;
   height: 500px;

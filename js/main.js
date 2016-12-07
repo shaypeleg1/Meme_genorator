@@ -12,12 +12,36 @@ var gMemes = [
         id: 1,
         url: 'img/memes/meme_2.jpg',
         keywords: ['history'],
-        rating: 0
+        rating: 4
+    },
+    {
+        id: 2,
+        url: 'img/memes/meme_3.jpg',
+        keywords: ['skeptic'],
+        rating: 3
+    },
+    {
+        id: 3,
+        url: 'img/memes/meme_4.jpg',
+        keywords: ['history'],
+        rating: 5
+    },
+    {
+        id: 4,
+        url: 'img/memes/meme_5.jpg',
+        keywords: ['funny','sad','skeptic'],
+        rating: 3
     }
+    
 ];
+
+var gKeywordsRating = {};
+
 
 $(document).ready(function(){
     renderGallery(gMemes);
+    gKeywordsRating = initKeywordRating(gMemes);
+    drawKeywordCloud(gKeywordsRating);
     initCanvas();
 
     // $(".hexagon").click(function(node){
@@ -48,7 +72,7 @@ function renderGallery(memes) {
 function renderHex(memObj) {
     var hex = '<li><div>'+
                 '<img id="'+ memObj.id +
-                '" onclick="drawImgOnCanvas(this)'+
+                '" onclick="memClick(this)'+
                 '" src="'+memObj.url+
                 '" alt="'+memObj.keywords+'"'+
                 ' /> </div></li>';
@@ -65,6 +89,9 @@ function addNewMeme(imgUrl, keywords) {
                 };
     console.log(imgObj);
     gMemes.push(imgObj);
+    keywords.forEach(function(keyword) {
+        gKeywordsRating[keyword] = 0;
+    });
 }
 
 // get string from user and serch if which objects key words
@@ -74,6 +101,7 @@ function searchForKeyword(string) {
     gMemes.forEach(function(meme) {
         meme.keywords.forEach(function(key) {
             if(key === string) {
+                gKeywordsRating[key]++;
                 matchedMemes.push(meme);  
             }
         });
@@ -85,10 +113,38 @@ function searchForKeyword(string) {
         renderGallery(gMemes);
     }
 }
+// iniate all the memes keywords rating
+function initKeywordRating(memes) {
+    var keywordsRate = {};
+    memes.forEach(function(mem) {
+        mem.keywords.forEach(function(keyword) {
+            keywordsRate[keyword] = 0;
+        });
+    });
+    return keywordsRate;
+}
+// draw keyword cloud
+function drawKeywordCloud(keywordsObj) {
+    $( ".common-search" ).empty();
+    Object.keys(keywordsObj).forEach(function(keyword) {
+        var fontSize = keywordsObj[keyword] * 10;
+        var searchTag ='<div id="'+keyword+
+                        '" style="font-size:'+fontSize+
+                        'px">'+keyword+
+                        '</div>';
+        var elGallery = $('.common-search').append(searchTag);
+    });
+}
+
+// sort and print hexgons by rating prop
+function sortByPopular() {
+    var popularMemes = gMemes.sort(function(a, b) {
+                    return b.rating - a.rating;
+    });
+    renderGallery(popularMemes);
+}
 
 function addUserMem() {
-
-
     var userUrl = prompt('insert img url');
     var userKeywordsStr = prompt('insert keywords');
     var userKeywords = userKeywordsStr.split(',');
@@ -96,14 +152,17 @@ function addUserMem() {
     renderHex(gMemes[gMemes.length-1]);
 }
 
-
-function drawImgOnCanvas(element) {
+function memClick(elMem) {
     var currMeme = gMemes.find(function(meme) {
-        return meme.id === parseInt(element.id);
+        return meme.id === parseInt(elMem.id);
     });
-    
+    drawImgOnCanvas(currMeme.url);
+    currMeme.rating++;
+}
+
+function drawImgOnCanvas(imgUrlStr) {
     var img = new Image();
-    img.src = currMeme.url;
+    img.src = imgUrlStr;
 
     console.log('',img);
     

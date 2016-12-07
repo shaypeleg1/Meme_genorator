@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Meme Generator</title>
+    <link rel="shortcut icon" href="img/icon.png" />
     <link rel="stylesheet" href="dist/style.css">
     <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
@@ -20,13 +21,14 @@
         <main class="mainPreview container flex flex-column justify-center align-center">
             <div class="toolbar">
                 <input class="search" type="text" name="search" placeholder="Search.." onkeyup="searchForKeyword(document.querySelector('.search').value)">
-                <button onclick="addUserMem()" class="btn">Add your own mem</button>
+                <button onclick="addUserMem()">Add your own mem</button>
+                <button onclick="sortByPopular()">Most Popular</button>
             </div>
             <ul class="gallery clr">
                 <!--Hexagons renders here-->
             </ul>
-
-        </main>
+            <div class="common-search"></div>
+    </main>
 
         <section class="memeGen flex space-around align-center flex-wrap">
 
@@ -39,8 +41,7 @@
 
                 <div class="tools__container flex flex-column space-around">
                     <div>
-                        <input type="text" placeholder="Type Top Text Here.."></input>
-
+                        <input class="textTop" type="text" placeholder="Type Top Text Here.."></input>
 
                         <button>
                            <i class="fa fa-align-left" aria-hidden="true"></i>
@@ -68,7 +69,7 @@
                         </button>
                     </div>
                     <div>
-                        <input type="text" placeholder="Type Bottom Text Here.."></input>
+                        <input class="textBottom" type="text" placeholder="Type Bottom Text Here.."></input>
                         <div>
                             <button>
                                 <i class="fa fa-align-left" aria-hidden="true"></i>

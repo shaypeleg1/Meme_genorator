@@ -12,8 +12,27 @@ var gMemes = [
         id: 1,
         url: 'img/memes/meme_2.jpg',
         keywords: ['history'],
-        rating: 0
+        rating: 4
+    },
+    {
+        id: 2,
+        url: 'img/memes/meme_3.jpg',
+        keywords: ['skeptic'],
+        rating: 3
+    },
+    {
+        id: 3,
+        url: 'img/memes/meme_4.jpg',
+        keywords: ['history'],
+        rating: 5
+    },
+    {
+        id: 4,
+        url: 'img/memes/meme_5.jpg',
+        keywords: ['funny'],
+        rating: 3
     }
+    
 ];
 
 $(document).ready(function(){
@@ -48,7 +67,7 @@ function renderGallery(memes) {
 function renderHex(memObj) {
     var hex = '<li><div>'+
                 '<img id="'+ memObj.id +
-                '" onclick="drawImgOnCanvas(this)'+
+                '" onclick="memClick(this)'+
                 '" src="'+memObj.url+
                 '" alt="'+memObj.keywords+'"'+
                 ' /> </div></li>';
@@ -82,10 +101,15 @@ function searchForKeyword(string) {
         renderGallery(matchedMemes);
     }
 }
+// sort and print hexgons by rating prop
+function sortByPopular() {
+    var popularMemes = gMemes.sort(function(a, b) {
+                    return b.rating - a.rating;
+    });
+    renderGallery(popularMemes);
+}
 
 function addUserMem() {
-
-
     var userUrl = prompt('insert img url');
     var userKeywordsStr = prompt('insert keywords');
     var userKeywords = userKeywordsStr.split(',');
@@ -93,15 +117,16 @@ function addUserMem() {
     renderHex(gMemes[gMemes.length-1]);
 }
 
-
-function drawImgOnCanvas(element) {
+function memClick(elMem) {
     var currMeme = gMemes.find(function(meme) {
-        return meme.id === parseInt(element.id);
+        return meme.id === parseInt(elMem.id);
     });
-    
-    console.log('img pressed!' ,currMeme.url );
+    drawImgOnCanvas(currMeme.url);
+    currMeme.rating++;
+}
+function drawImgOnCanvas(imgUrlStr) {
     var img = new Image();
-    img.src = currMeme.url;
+    img.src = imgUrlStr;
 
     console.log('',img);
     

@@ -1,5 +1,8 @@
 'use strict';
 console.log('Hello Meme');
+
+// ------  Globals ------- //
+var gCurrElImg;
 var gCtx;
 var gMemes = [
     {
@@ -38,11 +41,16 @@ var gMemes = [
 var gKeywordsRating = {};
 
 
-$(document).ready(function(){
+$(document).ready(function() {
     renderGallery(gMemes);
     gKeywordsRating = initKeywordRating(gMemes);
     drawKeywordCloud(gKeywordsRating);
     initCanvas();
+
+    // $(".textTop").keyup(function(node) {
+    //     var txtStr = node.currentTarget;
+    //     console.log( node);     
+    // });
 
     // $(".hexagon").click(function(node){
     //     var strUrl = node.currentTarget.style.backgroundImage;
@@ -53,6 +61,7 @@ $(document).ready(function(){
     // });
 
 });
+
 
 
 function initCanvas() {
@@ -161,23 +170,18 @@ function memClick(elMem) {
 }
 
 function drawImgOnCanvas(imgUrlStr) {
-    var img = new Image();
-    img.src = imgUrlStr;
+    var elImg = new Image();
+    elImg.src = imgUrlStr;
+    gCurrElImg = elImg;
 
-    console.log('',img);
+    console.log('',elImg);
     
-    
-    var imgx = img.width;
-    var imgy = img.height;
-
-    
+    var imgx = elImg.width;
+    var imgy = elImg.height;
 
     var elCanvas = document.querySelector('#canvas');
     elCanvas.width = imgx;
     elCanvas.height = imgy;
 
-    gCtx.drawImage(img, 0, 0, imgx, imgy);
-    gCtx.font = "60px 'Segoe UI'";
-    gCtx.fillText("print on Canvas", 50, 300);
-
+    gCtx.drawImage(elImg, 0, 0, imgx, imgy);
 }

@@ -31,7 +31,5 @@ $('.txtStylebtn').click(function() {
     console.log(this.name);
   var x = $(this).parents().children(':first-child');
   console.log(x[0].className);
-  
-  
 });
 

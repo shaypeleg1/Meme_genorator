@@ -1,22 +1,27 @@
 'use strict'
 console.log('text tool');
 
-function drawTextOnCanvas(textStr, className) {
+function drawTextOnCanvas(gTextObj) {
 
     var elImg = gCurrElImg;
-    var textStrTop;
-    
+
     gCtx.drawImage(elImg, 0, 0, elImg.width, elImg.height);
     gCtx.font = "60px 'Segoe UI'";
-    if(className === 'textTop'){
-        var elBottom = document.querySelector('.textBottom');
-        var textStrBottom = elBottom.value;
-        gCtx.fillText(textStr, 50, 100); 
-        gCtx.fillText(textStrBottom, 50, 300);
-    } else {
-        var elTop = document.querySelector('.textTop');
-        var textStrTop = elTop.value;
-        gCtx.fillText(textStrTop, 50, 100); 
-        gCtx.fillText(textStr, 50, 300);
+
+        gCtx.textAlign = gTextObj['topText'].align;
+        gCtx.fillText(gTextObj['topText'].text, elImg.width/2, elImg.height*0.2); 
+
+        gCtx.textAlign = gTextObj['bottomText'].align;
+        gCtx.fillText(gTextObj['bottomText'].text, elImg.width/2, elImg.height*0.85); 
+
+}
+
+function buttonIntersec(prop, value, direction) {
+    switch(prop) {
+        case 'text':
+            gState[direction].text = value;
+            drawTextOnCanvas(gState);
+        break;
     }
 }
+

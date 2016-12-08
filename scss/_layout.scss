@@ -31,6 +31,7 @@ section {
     width: 406px;
     height: 50%;
     background-color: red;  
+    float: right;
     .tools__container {
       height: 300px;
       input {
@@ -58,6 +59,7 @@ section {
     max-height: 80%;
     max-width: 55%;
     margin: 20px;
+    float: left;
   }
 }
 

@@ -2,6 +2,14 @@ nav {
     background-color: var(--main-color);
     height: 100%;
     color: white;
+    .nav__container {
+    width: 300px;
+    margin: auto;
+    display: flex;
+    /* height: 50px; */
+    text-align: center;
+    justify-content: space-around;
+    }
 }
 .navArrow {
     width: 0; 

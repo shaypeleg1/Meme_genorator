@@ -114,18 +114,17 @@ function renderGallery(memes) {
 }
 // print meme to hexagon
 function renderHex(memObj) {
-    var hex = '<li><div>' +
-        '<img id="' + memObj.id +
-        '" onclick="memClick(this)' +
-        '" src="' + memObj.url +
-        '" alt="' + memObj.keywords + '"' +
-        ' /> </div></li>';
+    var hex = '<li>' +
+                '<div>' +
+                    '<img id="' + memObj.id +'" onclick="memClick(this)' + '" src="' + memObj.url +'" alt="' + memObj.keywords +  ' />'+
+                '</div>' +
+               '</li>';
+               debugger;
     var elGallery = $('.gallery').append(hex);
 }
 
 function initCanvas() {
-    var canvas;
-    canvas = document.querySelector('canvas');
+    var canvas = document.querySelector('canvas');
     gCtx = canvas.getContext('2d');
 }
 

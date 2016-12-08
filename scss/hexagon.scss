@@ -15,7 +15,6 @@
   overflow:hidden;
   visibility:hidden;
   transform: rotate(-60deg) skewY(30deg);
-  
 }
 .gallery li *{
   position:absolute;
@@ -28,7 +27,7 @@
   text-align:center;
   overflow:hidden;
   transform: skewY(-30deg) rotate(60deg);  
-	backface-visibility:hidden;  
+	backface-visibility:hidden;
 }
 
 /* HEX CONTENT */
@@ -36,7 +35,6 @@
   left:-100%; right:-100%;
   width: auto; height:100%;
   margin:0 auto;   
-  
 }
 
 .gallery div h1, .gallery div p{

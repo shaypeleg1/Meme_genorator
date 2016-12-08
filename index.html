@@ -24,8 +24,8 @@
         <main class="mainPreview container flex flex-column justify-center align-center">
             <div class="toolbar">
                 <input class="search" type="text" name="search" placeholder="Search.." onkeyup="searchForKeyword(document.querySelector('.search').value)">
-                <button onclick="addUserMem()">Add your own mem</button>
-                <button onclick="sortByPopular()">Most Popular</button>
+                <button class="btn button-green" onclick="addUserMem()">Add your own mem</button>
+                <button class="btn button-green" onclick="sortByPopular()">Most Popular</button>
             </div>
             <ul class="gallery clr">
                 <!--Hexagons renders here-->
@@ -40,7 +40,7 @@
 
             <div class="tools flex flex-column space-around ">
 
-                <button class="btn">back to choose another meme</button>
+                <button class="btn button-green">back to choose another meme</button>
 
                 <div class="tools__container flex flex-column space-around">
                     <div>
@@ -104,7 +104,7 @@
 
                     </div>
                 </div>
-                <button id="download" onclick="downloadImg(this)">
+                <button id="download" class="btn button-green" onclick="downloadImg(this)">
                     Download as image<i class="fa fa-download" aria-hidden="true"></i>
             </button>
         </section>
@@ -172,7 +172,7 @@
                         <textarea rows="4" cols="50" name="msg" form="usrform">Write your message here...
                         </textarea>
                     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="submit" class="btn button-green">Submit</button>
                  </form>
                 <div class="side-contact">
                     <div class="direction-details">

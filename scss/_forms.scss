@@ -3,7 +3,9 @@
   font-size: rem(14px);
   font-family: var(--primary-font);
 }
-
+form {
+  margin-right: 20px;
+}
 .form-control {
   border: none;
   border-bottom: 1px solid #000;
@@ -15,3 +17,14 @@
 .form-group {
   margin: 1em 0;
 }
+.form-title {
+  height: auto;
+  color: #bebebe;
+  font-size: 30px;
+  font-family: var(--primary-font);
+  margin-bottom: 20px;
+  .secound-title {
+  font-size: 18px;
+  }
+}
+

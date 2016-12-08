@@ -6,16 +6,19 @@
     <title>Meme Generator</title>
     <link rel="shortcut icon" href="img/icon.png" />
     <link rel="stylesheet" href="dist/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
     <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
 
     <nav class="flex">
-        nav
-        <h1>Mem-Hive</h1>
+
+        
+        
         <img class="ImgArrow" src="img/nav_arrow.png">
     </nav>
+    <h1>Mem-Hive</h1>
     <div class="navArrow"></div>
     <section>
         <main class="mainPreview container flex flex-column justify-center align-center">
@@ -43,14 +46,14 @@
                     <div>
                         <input class="topText" type="text" placeholder="Type Top Text Here.." onkeyup="buttonIntersec('topText', 'text' , this.value)"></input>
 
-                        <button name="align-left" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'left')"  >
-                           <i class="fa fa-align-left" aria-hidden="true"></i>
+                        <button name="align-right" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'end')">
+                          <i class="fa fa-align-right" aria-hidden="true"></i>
                         </button>
                         <button name="align-center" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'center')">
                             <i class="fa fa-align-center" aria-hidden="true"></i>
                         </button>
-                        <button name="align-right" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'right')">
-                          <i class="fa fa-align-right" aria-hidden="true"></i>
+                        <button name="align-left" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'start')"  >
+                           <i class="fa fa-align-left" aria-hidden="true"></i>
                         </button>
                         <button name="minus" class="txtStylebtn">
                             <i class="fa fa-minus" aria-hidden="true"></i>
@@ -63,6 +66,8 @@
                             <i class="fa fa-tint" aria-hidden="true"></i>
                         </button>
 
+                        <!--<button name="shadow" class="txtStylebtn"></button>-->
+
                         <button>A</button>
 
                         <button>
@@ -72,14 +77,14 @@
                     <div>
                         <input class="bottomText" type="text" placeholder="Type Bottom Text Here.." onkeyup="buttonIntersec('bottomText', 'text' , this.value )"></input>
                         
-                            <button name="align-left" class="txtStylebtn" >
-                                <i class="fa fa-align-left" aria-hidden="true"></i>
+                            <button name="align-right" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'end')">
+                                <i class="fa fa-align-right" aria-hidden="true"></i>
                             </button>
-                            <button name="align-center" class="txtStylebtn">
+                            <button name="align-center" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'center')">
                                 <i class="fa fa-align-center" aria-hidden="true"></i>
                             </button>
-                            <button name="align-right" class="txtStylebtn">
-                                <i class="fa fa-align-right" aria-hidden="true"></i>
+                            <button name="align-left" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'start')">
+                                <i class="fa fa-align-left" aria-hidden="true"></i>
                             </button>
                             <button name="minus" class="txtStylebtn">
                                 <i class="fa fa-minus" aria-hidden="true"></i>
@@ -127,27 +132,52 @@
             </div>
         </summary>
 
-        <div class="contact flex space-around">
-            <form>
-                <div class="form-group">
-                    <label for="pwd">Name:</label>
-                    <input type="name" class="form-control" id="name">
+        <div class="contact flex flex-column align-center space-around">
+                <div class="form-title">
+                    Get In Touch
+                    <div class="secound-title">
+                        In order to get in touch use the contact form below:
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email address:</label>
-                    <input type="email" class="form-control" id="email">
+            <div class="flex flex-row flex-wrap">
+                <form>
+                    <div class="form-group">
+                        <!--<label for="pwd">Name:</label>-->
+                        <input type="name" class="form-control" id="name" value="Name (Required)">
+                    </div>
+                    <div class="form-group">
+                        <!--<label for="email">Email address:</label>-->
+                        <input type="email" class="form-control" id="email" value="Email (Required)">
+                    </div>
+                    <div class="form-group">
+                        <!--<label for="pwd"></label>-->
+                        <input type="name" class="form-control" id="subject" value="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="4" cols="50" name="msg" form="usrform">Write your message here...
+                        </textarea>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                 </form>
+                <div class="side-contact">
+                    <div class="direction-details">
+                        <span>Quisque Hendrerit:</span>&nbsp; purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus morbi vitae. 
+                    </div>
+                    <div class="address">
+                        <img class="ImgAddress" src="img/location.png">
+                        Elm St. 14/05 Lost City <br>
+                        <img class="ImgAddress" src="img/phone.png">
+                        + 3528 331 86 35 <br>
+                        <img class="ImgAddress" src="img/mail.png">
+                        info@hexalcorp.com
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="pwd"></label>
-                    <input type="name" class="form-control" id="name">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form>
+            </div>
         </div>
 
     </section>
     <footer>
-        footer
+        &copy; Copyright 2016 Mem-Hive.
     </footer>
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/main.js"></script>

@@ -13,11 +13,11 @@ function initKeywordRating(memes) {
 function drawKeywordCloud(keywordsObj) {
     $( ".common-search" ).empty();
     Object.keys(keywordsObj).forEach(function(keyword) {
-        var fontSize = Math.log(keywordsObj[keyword] * 5);
+        var fontSize = keywordsObj[keyword] * 5;
         var searchTag ='<div id="'+keyword+
                         '" style="font-size:'+fontSize+
                         'px">'+keyword+
                         '</div>';
         var elGallery = $('.common-search').append(searchTag);
-    });
+    }); 
 }

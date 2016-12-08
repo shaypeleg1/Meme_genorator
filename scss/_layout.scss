@@ -8,7 +8,6 @@ section {
   margin: 0 auto;
   padding: 0 1em;
 }
-
 .toolbar {
   height: 100px;
 }
@@ -92,11 +91,32 @@ section {
 
 .contact {
   width: 100%;
-  background-color: var(--sections-bg);
+  background-color: var(--main-color);
+  color: #bebebe;
+  .side-contact {
+    font-family: var(--secondary-font);
+    font-size: 12px;
+    line-height: 22px;
+    .direction-details {
+      width: 180px;
+      font-weight: 400;
+      margin-bottom: 40px;
+      span {
+        color: #e0e0e0;;
+        font-weight: 900;
+      }
+    }
+    .address {
+      .ImgAddress {
+        margin-right: 8px;
+      }
+    }
+  }
 }
 
 footer {
   width: 100%;
-  background-color: lightblue;
+  background-color: #222;
+  color: #3e3e3e;
   height: 45px;
 }

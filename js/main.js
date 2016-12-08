@@ -8,18 +8,20 @@ var gTextAlign;
 var gState = { 
                 topText : {
                             text:  '',
-                            align: 'start',
-                            size:  '60',
+                            align: 'center',
+                            size:  60,
                             color: 'white',
                             font: 'Segoe UI',
+                            shadow: false
                 },
                 
                 bottomText : {
                             text:  '',
-                            align: 'start',
-                            size:  '60',
+                            align: 'center',
+                            size:  60,
                             color: 'white',
                             font: 'Segoe UI',
+                            shadow: false
                 }
 }
 var gMemes = [

@@ -16,20 +16,25 @@ function drawTextOnCanvas(gTextObj) {
 
 }
 
-function buttonIntersec(prop, value, direction) {
+function buttonIntersec(direction, prop, value) {
     switch(prop) {
         case 'text':
             gState[direction].text = value;
             drawTextOnCanvas(gState);
+        break;
+        case 'plus':
+            gState[direction].size++;
         break;
     }
 }
 
 
 
-$('.txtStylebtn').click(function() {
+$('.txtStylebtn').click(function () {
     console.log(this.name);
-  var x = $(this).parents().children(':first-child');
-  console.log(x[0].className);
+    var txtProp = this.name;
+    var txtDirection = $(this).parents().children(':first-child');
+    console.log(txtDirection[0].className);
+    buttonIntersec(txtDirection,txtProp);
 });
 

@@ -9,7 +9,7 @@ var gState = {
                 topText : {
                             text:  '',
                             align: 'start',
-                            size:  '60px',
+                            size:  '60',
                             color: 'white',
                             font: 'Segoe UI',
                 },
@@ -17,7 +17,7 @@ var gState = {
                 bottomText : {
                             text:  '',
                             align: 'start',
-                            size:  '60px',
+                            size:  '60',
                             color: 'white',
                             font: 'Segoe UI',
                 }

@@ -34,8 +34,49 @@ var gMemes = [
         url: 'img/memes/meme_5.jpg',
         keywords: ['funny','sad','skeptic'],
         rating: 3
+    },
+    {
+        id: 5,
+        url: 'img/memes/meme_6.jpg',
+        keywords: ['funny', 'sad', 'skeptic'],
+        rating: 3
+    },
+    {
+        id: 6,
+        url: 'img/memes/meme_7.jpg',
+        keywords: ['funny', 'sad', 'skeptic'],
+        rating: 3
+    },
+    {
+        id: 7,
+        url: 'img/memes/meme_8.jpg',
+        keywords: ['funny', 'sad', 'skeptic'],
+        rating: 3
+    },
+    {
+        id: 8,
+        url: 'img/memes/meme_9.jpg',
+        keywords: ['funny', 'sad', 'skeptic'],
+        rating: 3
+    },
+    {
+        id: 9,
+        url: 'img/memes/meme_10.jpg',
+        keywords: ['funny', 'sad', 'skeptic'],
+        rating: 3
+    },
+    {
+        id: 10,
+        url: 'img/memes/meme_11.jpg',
+        keywords: ['funny', 'sad', 'skeptic'],
+        rating: 3
+    },
+    {
+        id: 11,
+        url: 'img/memes/meme_12.png',
+        keywords: ['funny', 'sad', 'skeptic'],
+        rating: 3
     }
-    
 ];
 
 var gKeywordsRating = {};

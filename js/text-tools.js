@@ -1,6 +1,4 @@
 'use strict'
-console.log('text tool');
-
 function drawTextOnCanvas(textStr, className) {
 
     var elImg = gCurrElImg;
@@ -19,4 +17,17 @@ function drawTextOnCanvas(textStr, className) {
         gCtx.fillText(textStrTop, 50, 100); 
         gCtx.fillText(textStr, 50, 300);
     }
+}
+
+
+$('.txtStylebtn').click(function() {
+    console.log(this.name);
+    
+  var x = $(this).parents().children(':first-child');
+  console.log(x[0].className);
+  
+  
+});
+function changeTextStyle(direction,prop,value) {
+
 }

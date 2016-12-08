@@ -7,7 +7,7 @@ function drawTextOnCanvas(gTextObj) {
 
     gCtx.drawImage(elImg, 0, 0, elImg.width, elImg.height);
     gCtx.font = "60px 'Segoe UI'";
-
+    
         gCtx.textAlign = gTextObj['topText'].align;
         gCtx.fillText(gTextObj['topText'].text, elImg.width/2, elImg.height*0.2); 
 
@@ -34,6 +34,4 @@ $('.txtStylebtn').click(function() {
   
   
 });
-function changeTextStyle(direction,prop,value) {
 
-}

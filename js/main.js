@@ -4,6 +4,24 @@ console.log('Hello Meme');
 // ------  Globals ------- //
 var gCurrElImg;
 var gCtx;
+var gTextAlign;
+var gState = { 
+                topText : {
+                            text:  '',
+                            align: 'start',
+                            size:  '60px',
+                            color: 'white',
+                            font: 'Segoe UI',
+                },
+                
+                bottomText : {
+                            text:  '',
+                            align: 'start',
+                            size:  '60px',
+                            color: 'white',
+                            font: 'Segoe UI',
+                }
+}
 var gMemes = [
     {
         id: 0,

@@ -6,7 +6,6 @@
   "scripts": {
     "start": "npm-run-all --parallel browser styles vscode",
     "browser": "browser-sync start --server --files *.html, dist/*.css",
-    "vscode": "code .",
     "styles": "node-sass scss/style.scss -o dist --watch",
     "build": "rm -rf build && copyfiles assets/* index.html assets/fonts/**/* dist/* build"
   },

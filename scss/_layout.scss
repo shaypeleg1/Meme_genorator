@@ -42,6 +42,13 @@ section {
         padding: 10px 15px 10px;
         border-radius: 20%;
       }
+      .hideColorPicker {
+        opacity: 0;
+        width: inherit;
+        height: inherit;
+        position: absolute;
+        padding: inherit;
+      }
     }
     #download {
       height: 30px;

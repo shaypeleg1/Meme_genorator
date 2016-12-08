@@ -3,11 +3,20 @@ section {
   // width: 1400px;
   // margin:0 auto;
 }
+
+.inner-container {
+  max-width: var(--inner-container-width);
+  margin: auto;
+  border-left: 1px solid #bebebe; 
+  border-right: 1px solid #bebebe; 
+
+}
 .container {
   // width: var(--container-width);
   margin: 0 auto;
   padding: 0 1em;
 }
+
 .toolbar {
   height: 100px;
 }
@@ -30,12 +39,8 @@ section {
   .tools {
     width: 416px;
     height: 50%;
-<<<<<<< HEAD
     background-color: red;  
     float: right;
-=======
-    background-color: lightgray;  
->>>>>>> dc19ff66a2cb575f13af9e6926082f2582fa3576
     .tools__container {
       height: 300px;
       input {
@@ -68,36 +73,51 @@ section {
 }
 
 .about {
+  h1 {
+    text-align: center;
+    color: #d7fcf5;
+  }
   width: 100%;
-  height: 500px;
+  height: 520px;
   background-color: #2eb398;
   img {
     border-radius: 5%;
+    width:90%;
+    margin: auto;
   }
   p{
-    color: white;
+    color: #d7fcf5;
     text-align: center;
+    font-family: var(--primary-font);
   }
   .container__shay, .container__mark {
     width: 100px;
     width: 30%;
-    height: 350px;
-    margin: 25px;
-    font-size: em(16px)
+    font-size: em(16px);
+    @include for-mobile-only {
+      float: none;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 50%;
+    }
   }
   .container__shay {
     float: left;
+    margin-left: 100px;
+ 
   }
   .container__mark {
     float: right;
+    margin-right: 100px;
   }
   .about__links {
     text-align: center;
   }
-  .claerBoth {
-    clear: both;
+  @include for-mobile-only {
+      overflow: hidden;
+      height: 100%;
+      display: flex;
   }
-
 }
 
 .contact {
@@ -131,3 +151,12 @@ footer {
   color: #3e3e3e;
   height: 45px;
 }
+
+@mixin for-mobile-only {
+  @media (max-width: $mobile-breakpoint) {
+    
+  }
+}
+  // @include for-mobile-only {
+
+  // }

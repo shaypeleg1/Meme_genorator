@@ -116,10 +116,10 @@ function renderGallery(memes) {
 function renderHex(memObj) {
     var hex = '<li>' +
                 '<div>' +
-                    '<img id="' + memObj.id +'" onclick="memClick(this)' + '" src="' + memObj.url +'" alt="' + memObj.keywords +  ' />'+
+                    '<img id="' + memObj.id +'" onclick="memClick(this)' + '" src="' + memObj.url +'" alt="' + memObj.keywords +  '" />'+
                 '</div>' +
                '</li>';
-               debugger;
+
     var elGallery = $('.gallery').append(hex);
 }
 

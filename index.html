@@ -23,177 +23,175 @@
             <div>xxxx</div>
         </div>
     </nav>
+    <div class="inner-container">
+        <h1 class="app-logo">Mem-Hive</h1>
 
-    <h1>Mem-Hive</h1>
+        <section>
+            <main class="mainPreview flex flex-column justify-center align-center">
+                <div class="toolbar">
+                    <input class="search" type="text" name="search" placeholder="Search.." onkeyup="searchForKeyword(document.querySelector('.search').value)">
+                    <button class="btn button-green" onclick="addUserMem()">Add your own mem</button>
+                    <button class="btn button-green" onclick="sortByPopular()">Most Popular</button>
+                </div>
+                    <ul class="gallery clr">
+                        <!--Hexagons renders here-->
+                    </ul>
+                <div class="common-search"></div>
+            </main>
 
-    <section>
-        <main class="mainPreview container flex flex-column justify-center align-center">
-            <div class="toolbar">
-                <input class="search" type="text" name="search" placeholder="Search.." onkeyup="searchForKeyword(document.querySelector('.search').value)">
-                <button class="btn button-green" onclick="addUserMem()">Add your own mem</button>
-                <button class="btn button-green" onclick="sortByPopular()">Most Popular</button>
-            </div>
-                <ul class="gallery clr">
-                    <!--Hexagons renders here-->
-                </ul>
-            <div class="common-search"></div>
-        </main>
+            <section class="memeGen">
+                <canvas id="canvas">Sorry, no canvas available</canvas>
+                <br/>
+                <div class="tools flex flex-column space-around ">
 
-        <section class="memeGen">
-            <canvas id="canvas">Sorry, no canvas available</canvas>
-            <br/>
-            <div class="tools flex flex-column space-around ">
+                    <button class="btn button-green">back to choose another meme</button>
 
-                <button class="btn button-green">back to choose another meme</button>
+                    <div class="tools__container flex flex-column space-around">
+                        <div>
+                            <input class="topText" type="text" placeholder="Type Top Text Here.." onkeyup="buttonIntersec('topText', 'text' , this.value)"></input>
 
-                <div class="tools__container flex flex-column space-around">
-                    <div>
-                        <input class="topText" type="text" placeholder="Type Top Text Here.." onkeyup="buttonIntersec('topText', 'text' , this.value)"></input>
-
-                        <button name="align-right" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'end')">
-                          <i class="fa fa-align-right" aria-hidden="true"></i>
-                        </button>
-                        <button name="align-center" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'center')">
-                            <i class="fa fa-align-center" aria-hidden="true"></i>
-                        </button>
-                        <button name="align-left" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'start')">
-                           <i class="fa fa-align-left" aria-hidden="true"></i>
-                        </button>
-                        <button name="minus" class="txtStylebtn">
-                            <i class="fa fa-minus" aria-hidden="true"></i>
-                        </button>
-                        <button name="plus" class="txtStylebtn">
-                            <i class="fa fa-plus" aria-hidden="true"></i>
-                        </button>
-                        <button name="color" class="txtStylebtn">
-                            <input type="color" class="hideColorPicker">
-                            <i class="fa fa-tint" aria-hidden="true"></i>
-                        </button>
-                        <!--<button name="shadow" class="txtStylebtn"></button>-->
-                        <button>A</button>
-                        <button>
-                            <i class="fa fa-trash-o" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                    <div>
-                        <input class="bottomText" type="text" placeholder="Type Bottom Text Here.." onkeyup="buttonIntersec('bottomText', 'text' , this.value )"></input>
-
-                        <button name="align-right" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'end')">
-                                <i class="fa fa-align-right" aria-hidden="true"></i>
+                            <button name="align-right" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'end')">
+                            <i class="fa fa-align-right" aria-hidden="true"></i>
                             </button>
-                        <button name="align-center" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'center')">
+                            <button name="align-center" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'center')">
                                 <i class="fa fa-align-center" aria-hidden="true"></i>
                             </button>
-                        <button name="align-left" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'start')">
-                                <i class="fa fa-align-left" aria-hidden="true"></i>
+                            <button name="align-left" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'start')">
+                            <i class="fa fa-align-left" aria-hidden="true"></i>
                             </button>
-                        <button name="minus" class="txtStylebtn">
+                            <button name="minus" class="txtStylebtn">
                                 <i class="fa fa-minus" aria-hidden="true"></i>
                             </button>
-                        <button name="plus" class="txtStylebtn">
+                            <button name="plus" class="txtStylebtn">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
                             </button>
-                        <button name="color" class="txtStylebtn">
+                            <button name="color" class="txtStylebtn">
+                                <input type="color" class="hideColorPicker">
                                 <i class="fa fa-tint" aria-hidden="true"></i>
                             </button>
-                        <button>A</button>
-                        <button>
-                            <i class="fa fa-trash-o" aria-hidden="true"></i>
-                        </button>
+                            <!--<button name="shadow" class="txtStylebtn"></button>-->
+                            <button>A</button>
+                            <button>
+                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div>
+                            <input class="bottomText" type="text" placeholder="Type Bottom Text Here.." onkeyup="buttonIntersec('bottomText', 'text' , this.value )"></input>
 
+                            <button name="align-right" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'end')">
+                                    <i class="fa fa-align-right" aria-hidden="true"></i>
+                                </button>
+                            <button name="align-center" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'center')">
+                                    <i class="fa fa-align-center" aria-hidden="true"></i>
+                                </button>
+                            <button name="align-left" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'start')">
+                                    <i class="fa fa-align-left" aria-hidden="true"></i>
+                                </button>
+                            <button name="minus" class="txtStylebtn">
+                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                </button>
+                            <button name="plus" class="txtStylebtn">
+                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                </button>
+                            <button name="color" class="txtStylebtn">
+                                    <i class="fa fa-tint" aria-hidden="true"></i>
+                                </button>
+                            <button>A</button>
+                            <button>
+                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                            </button>
+
+                        </div>
+                    </div>
+                    <button id="download" class="btn button-green" onclick="downloadImg(this)">
+                        Download as image<i class="fa fa-download" aria-hidden="true"></i>
+                    </button>
+                    <div class="claerBoth"></div>
+            </section>
+
+            <summary class="about clearBoth">
+                <div class="container__shay">
+                    <h1>Shay Peleg</h1>
+                    <img class="img-responsive img__shay" src="img/profilepic_shay.png" alt="Shay Peleg">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus maiores saepe iure asperiores alias
+                        laudantium, consectetur omnis fuga provident dolorum eos nesciunt optio accusamus praesentium aliquam
+                        quos perferendis cumque tempora.</p>
+                    <div class="about__links">
+                        <a target="_blank" href="https://www.facebook.com/speleg3?fref=ts">
+                            <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+                        </a>
+                        <a target="_blank" href="https://www.linkedin.com/in/pelegshay?authType=NAME_SEARCH&authToken=MyIv&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A255489221%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1481197922074%2Ctas%3Ashay%20p">
+                            <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                        </a>
+                        <a target="_blank" href="https://github.com/shaypeleg1">
+                            <i class="fa fa-github-square fa-2x" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
-                <button id="download" class="btn button-green" onclick="downloadImg(this)">
-                    Download as image<i class="fa fa-download" aria-hidden="true"></i>
-                </button>
-                <div class="claerBoth"></div>
-        </section>
-
-        <summary class="about">
-            <div class="container__shay">
-                <img class="img-responsive img__shay" src="img/profilepic_shay.png" alt="Shay Peleg">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus maiores saepe iure asperiores alias
-                    laudantium, consectetur omnis fuga provident dolorum eos nesciunt optio accusamus praesentium aliquam
-                    quos perferendis cumque tempora.</p>
-                <div class="about__links">
-                    <a target="_blank" href="https://www.facebook.com/speleg3?fref=ts">
-                        <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
-                    </a>
-                    <a target="_blank" href="https://www.linkedin.com/in/pelegshay?authType=NAME_SEARCH&authToken=MyIv&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A255489221%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1481197922074%2Ctas%3Ashay%20p">
-                        <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
-                    </a>
-                    <a target="_blank" href="https://github.com/shaypeleg1">
-                        <i class="fa fa-github-square fa-2x" aria-hidden="true"></i>
-                    </a>
+                <div class="container__mark">
+                    <h1>Mark Fridman</h1>
+                    <img class="img-responsive " src="img/profilepic_mark.png" alt="Mark Fridman">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis corporis porro minus, sequi doloremque.
+                        Facere sequi, distinctio, atque asperiores eveniet eligendi vero illum pariatur rerum deleniti itaque
+                        magni est neque.</p>
+                    <div class="about__links">
+                        <a target="_blank" href="https://www.facebook.com/mark.fridman">
+                            <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+                        </a>
+                        <a target="_blank" href="https://www.linkedin.com/in/mark-fridman-44400396?trk=hp-identity-name">
+                            <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                        </a>
+                        <a target="_blank" href="https://github.com/ResorceBasedEconomy">
+                            <i class="fa fa-github-square fa-2x" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="container__mark">
-                <img class="img-responsive " src="img/profilepic_mark.png" alt="Mark Fridman">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis corporis porro minus, sequi doloremque.
-                    Facere sequi, distinctio, atque asperiores eveniet eligendi vero illum pariatur rerum deleniti itaque
-                    magni est neque.</p>
-                <div class="about__links">
-                    <a target="_blank" href="https://www.facebook.com/mark.fridman">
-                        <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
-                    </a>
-                    <a target="_blank" href="https://www.linkedin.com/in/mark-fridman-44400396?trk=hp-identity-name">
-                        <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
-                    </a>
-                    <a target="_blank" href="https://github.com/ResorceBasedEconomy">
-                        <i class="fa fa-github-square fa-2x" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </div>
+            </summary>
             <div class="claerBoth"></div>
-        </summary>
 
-        <div class="contact flex flex-column align-center space-around">
-            <div class="form-title">
-                Get In Touch
-                <div class="secound-title">
-                    In order to get in touch use the contact form below:
+            <div class="contact flex flex-column align-center space-around">
+                <div class="form-title">
+                    Get In Touch
+                    <div class="secound-title">
+                        In order to get in touch use the contact form below:
+                    </div>
                 </div>
-            </div>
-            <div class="flex flex-row flex-wrap">
-                <form>
-                    <div class="form-group">
+                <div class="flex flex-row flex-wrap">
+                    <form>
+                        <div class="form-group">
 
-                        <input type="name" class="form-control" id="name" value="Name (Required)">
-                    </div>
-                    <div class="form-group">
+                            <input type="name" class="form-control" id="name" value="Name (Required)">
+                        </div>
+                        <div class="form-group">
 
-                        <input type="email" class="form-control" id="email" value="Email (Required)">
-                    </div>
-                    <div class="form-group">
+                            <input type="email" class="form-control" id="email" value="Email (Required)">
+                        </div>
+                        <div class="form-group">
 
-                        <input type="name" class="form-control" id="subject" value="Subject">
-                    </div>
-                    <div class="form-group">
-                        <textarea rows="4" cols="50" name="msg" form="usrform">Write your message here...
-                        </textarea>
-                    </div>
-<<<<<<< HEAD
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-=======
-                    <button type="submit" class="btn button-green">Submit</button>
-                 </form>
->>>>>>> dc19ff66a2cb575f13af9e6926082f2582fa3576
-                <div class="side-contact">
-                    <div class="direction-details">
-                        <span>Quisque Hendrerit:</span>&nbsp; purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae
-                        aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus morbi vitae.
-                    </div>
-                    <div class="address">
-                        <img class="ImgAddress" src="img/location.png"> Elm St. 14/05 Lost City <br>
-                        <img class="ImgAddress" src="img/phone.png"> + 3528 331 86 35 <br>
-                        <img class="ImgAddress" src="img/mail.png"> info@hexalcorp.com
+                            <input type="name" class="form-control" id="subject" value="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="4" cols="50" name="msg" form="usrform">Write your message here...
+                            </textarea>
+                        </div>
+                        <button type="submit" class="btn button-green">Submit</button>
+                    </form>
+                    <div class="side-contact">
+                        <div class="direction-details">
+                            <span>Quisque Hendrerit:</span>&nbsp; purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae
+                            aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus morbi vitae.
+                        </div>
+                        <div class="address">
+                            <img class="ImgAddress" src="img/location.png"> Elm St. 14/05 Lost City <br>
+                            <img class="ImgAddress" src="img/phone.png"> + 3528 331 86 35 <br>
+                            <img class="ImgAddress" src="img/mail.png"> info@hexalcorp.com
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-    </section>
+        </section>
+    </div>
     <footer>
         &copy; Copyright 2016 Mem-Hive.
     </footer>

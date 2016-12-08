@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "npm-run-all --parallel browser styles vscode",
+    "start": "npm-run-all --parallel browser styles",
     "browser": "browser-sync start --server --files *.html, dist/*.css",
     "styles": "node-sass scss/style.scss -o dist --watch",
     "build": "rm -rf build && copyfiles assets/* index.html assets/fonts/**/* dist/* build"

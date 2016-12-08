@@ -1,5 +1,5 @@
 'use strict';
-// iniate all the memes keywords rating
+// iniate all the memes keywords rating (beta version: random rating)
 function initKeywordRating(memes) {
     var keywordsRate = {};
     memes.forEach(function(mem) {
@@ -9,10 +9,12 @@ function initKeywordRating(memes) {
     });
     return keywordsRate;
 }
+
 // draw keyword cloud
 function drawKeywordCloud(keywordsObj) {
     $( ".common-search" ).empty();
     Object.keys(keywordsObj).forEach(function(keyword) {
+        // converts keyword rate to font size and adds to the DOM
         var fontSize = keywordsObj[keyword] * 5;
         var searchTag ='<div id="'+keyword+
                         '" style="font-size:'+fontSize+

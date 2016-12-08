@@ -1,28 +1,26 @@
 'use strict';
-console.log('Hello Meme');
-
 // ------  Globals ------- //
 var gCurrElImg;
 var gCtx;
-var gTextAlign;
-var gState = { 
-                topText : {
-                            text:  '',
-                            align: 'center',
-                            size:  60,
-                            color: 'white',
-                            font: 'Segoe UI',
-                            shadow: false
-                },
-                
-                bottomText : {
-                            text:  '',
-                            align: 'center',
-                            size:  60,
-                            color: 'white',
-                            font: 'Segoe UI',
-                            shadow: false
-                }
+var gKeywordsRating = {};
+var gState = {
+    topText: {
+        text: '',
+        align: 'center',
+        size: 60,
+        color: 'white',
+        font: 'Segoe UI',
+        shadow: false
+    },
+
+    bottomText: {
+        text: '',
+        align: 'center',
+        size: 60,
+        color: 'white',
+        font: 'Segoe UI',
+        shadow: false
+    }
 }
 var gMemes = [
     {
@@ -52,7 +50,7 @@ var gMemes = [
     {
         id: 4,
         url: 'img/memes/meme_5.jpg',
-        keywords: ['funny','sad','skeptic'],
+        keywords: ['funny', 'sad', 'skeptic'],
         rating: 3
     },
     {
@@ -99,31 +97,31 @@ var gMemes = [
     }
 ];
 
-var gKeywordsRating = {};
-
-
-$(document).ready(function() {
+// onload, render the memes gallary and the keyword cloud
+$(document).ready(function () {
     renderGallery(gMemes);
     gKeywordsRating = initKeywordRating(gMemes);
     drawKeywordCloud(gKeywordsRating);
     initCanvas();
-
-    // $(".textTop").keyup(function(node) {
-    //     var txtStr = node.currentTarget;
-    //     console.log( node);     
-    // });
-
-    // $(".hexagon").click(function(node){
-    //     var strUrl = node.currentTarget.style.backgroundImage;
-    //     // TODO find better 
-    //     console.log(node);
-    //     strUrl = strUrl.substr(5,strUrl.length-7);
-    //     drawImgOnCanvas(strUrl);
-    // });
-
 });
 
-
+// clean and print new memes gallery
+function renderGallery(memes) {
+    $(".gallery").empty();
+    memes.forEach(function (mem) {
+        renderHex(mem);
+    });
+}
+// print meme to hexagon
+function renderHex(memObj) {
+    var hex = '<li><div>' +
+        '<img id="' + memObj.id +
+        '" onclick="memClick(this)' +
+        '" src="' + memObj.url +
+        '" alt="' + memObj.keywords + '"' +
+        ' /> </div></li>';
+    var elGallery = $('.gallery').append(hex);
+}
 
 function initCanvas() {
     var canvas;
@@ -131,53 +129,19 @@ function initCanvas() {
     gCtx = canvas.getContext('2d');
 }
 
-// clean and print new memes gallery
-function renderGallery(memes) {
-    $( ".gallery" ).empty();
-    memes.forEach(function(mem) {
-        renderHex(mem);
-    });
-}
-// print meme to hexagon
-function renderHex(memObj) {
-    var hex = '<li><div>'+
-                '<img id="'+ memObj.id +
-                '" onclick="memClick(this)'+
-                '" src="'+memObj.url+
-                '" alt="'+memObj.keywords+'"'+
-                ' /> </div></li>';
-    var elGallery = $('.gallery').append(hex);
-}
-// add new meme obj to the global
-function addNewMeme(imgUrl, keywords) {
-    var nextId = gMemes.length + 1;
-    var imgObj = {
-                id: nextId,
-                url: imgUrl,
-                keywords: keywords,
-                rating: 0
-                };
-    console.log(imgObj);
-    gMemes.push(imgObj);
-    keywords.forEach(function(keyword) {
-        gKeywordsRating[keyword] = 0;
-    });
-}
-
 // get string from user and serch if which objects key words
-// match then render only the matching objects if found any:
+// match then render only the matching objects if found any.
 function searchForKeyword(string) {
     var matchedMemes = [];
-    gMemes.forEach(function(meme) {
-        meme.keywords.forEach(function(key) {
-            if(key === string) {
+    gMemes.forEach(function (meme) {
+        meme.keywords.forEach(function (key) {
+            if (key === string) {
                 gKeywordsRating[key]++;
-                matchedMemes.push(meme);  
+                matchedMemes.push(meme);
             }
         });
     });
-    
-    if(matchedMemes.length !== 0) {
+    if (matchedMemes.length !== 0) {
         renderGallery(matchedMemes);
     } else if (string === "") {
         renderGallery(gMemes);
@@ -186,22 +150,39 @@ function searchForKeyword(string) {
 
 // sort and print hexgons by rating prop
 function sortByPopular() {
-    var popularMemes = gMemes.sort(function(a, b) {
-                    return b.rating - a.rating;
+    var popularMemes = gMemes.sort(function (a, b) {
+        return b.rating - a.rating;
     });
     renderGallery(popularMemes);
 }
 
+// user can add customized mem
 function addUserMem() {
     var userUrl = prompt('insert img url');
     var userKeywordsStr = prompt('insert keywords');
     var userKeywords = userKeywordsStr.split(',');
-    addNewMeme(userUrl,userKeywords);
-    renderHex(gMemes[gMemes.length-1]);
+    addNewMeme(userUrl, userKeywords);
+    renderHex(gMemes[gMemes.length - 1]);
+}
+// add new meme obj to the global
+function addNewMeme(imgUrl, keywords) {
+    var nextId = gMemes.length + 1;
+    var imgObj = {
+        id: nextId,
+        url: imgUrl,
+        keywords: keywords,
+        rating: 0
+    };
+    console.log(imgObj);
+    gMemes.push(imgObj);
+    keywords.forEach(function (keyword) {
+        gKeywordsRating[keyword] = 0;
+    });
 }
 
+// find the selected mem inside the global.
 function memClick(elMem) {
-    var currMeme = gMemes.find(function(meme) {
+    var currMeme = gMemes.find(function (meme) {
         return meme.id === parseInt(elMem.id);
     });
     drawImgOnCanvas(currMeme.url);
@@ -213,8 +194,8 @@ function drawImgOnCanvas(imgUrlStr) {
     elImg.src = imgUrlStr;
     gCurrElImg = elImg;
 
-    console.log('',elImg);
-    
+    console.log('', elImg);
+
     var imgx = elImg.width;
     var imgy = elImg.height;
 

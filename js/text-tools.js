@@ -13,6 +13,7 @@ function drawTextOnCanvas(gTextObj) {
         ctx.shadowOffsetY = 3; 
         ctx.shadowBlur = 3;
     }
+    gCtx.fillStyle = gTextObj['topText'].color;
     gCtx.textAlign = gTextObj['topText'].align;
     gCtx.font = gTextObj['topText'].size+'px '+gTextObj['bottomText'].font;
     gCtx.fillText(gTextObj['topText'].text, elImg.width/2, elImg.height*0.2); 
@@ -23,6 +24,7 @@ function drawTextOnCanvas(gTextObj) {
         ctx.shadowOffsetY = 3; 
         ctx.shadowBlur = 3;
     }
+    gCtx.fillStyle = gTextObj['bottomText'].color;
     gCtx.textAlign = gTextObj['bottomText'].align;
     gCtx.font = gTextObj['bottomText'].size+'px '+gTextObj['bottomText'].font;
     gCtx.fillText(gTextObj['bottomText'].text, elImg.width/2, elImg.height*0.85); 

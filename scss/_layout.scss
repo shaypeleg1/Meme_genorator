@@ -56,30 +56,35 @@ section {
 
 .about {
   width: 100%;
-  height: 700px;
+  height: 500px;
   background-color: #2eb398;
   img {
-    background-color: red;
-    margin: 10px;
     border-radius: 5%;
   }
   p{
     color: white;
+    text-align: center;
+  }
+  .container__shay, .container__mark {
+    width: 100px;
     width: 30%;
+    height: 350px;
+    margin: 25px;
+    font-size: em(16px)
   }
-  div {
-    // width: 100px;
-    // width: 30%;
-    // height: 400px;
-    // float: left;
-    // margin: 50px;
+  .container__shay {
+    float: left;
   }
-  div:last-child {
+  .container__mark {
     float: right;
   }
-  .img__shay {
-    // padding-top: 30px;
+  .about__links {
+    text-align: center;
   }
+  .claerBoth {
+    clear: both;
+  }
+
 }
 
 .contact {

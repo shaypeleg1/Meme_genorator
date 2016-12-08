@@ -28,7 +28,7 @@
                 <!--Hexagons renders here-->
             </ul>
             <div class="common-search"></div>
-    </main>
+        </main>
 
         <section class="memeGen flex space-around align-center flex-wrap">
 
@@ -49,7 +49,7 @@
                         <button name="align-center" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'center')">
                             <i class="fa fa-align-center" aria-hidden="true"></i>
                         </button>
-                        <button name="align-left" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'start')"  >
+                        <button name="align-left" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'start')">
                            <i class="fa fa-align-left" aria-hidden="true"></i>
                         </button>
                         <button name="minus" class="txtStylebtn">
@@ -72,60 +72,75 @@
                     </div>
                     <div>
                         <input class="bottomText" type="text" placeholder="Type Bottom Text Here.." onkeyup="buttonIntersec('bottomText', 'text' , this.value )"></input>
-                        
-                            <button name="align-right" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'end')">
+
+                        <button name="align-right" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'end')">
                                 <i class="fa fa-align-right" aria-hidden="true"></i>
                             </button>
-                            <button name="align-center" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'center')">
+                        <button name="align-center" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'center')">
                                 <i class="fa fa-align-center" aria-hidden="true"></i>
                             </button>
-                            <button name="align-left" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'start')">
+                        <button name="align-left" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'start')">
                                 <i class="fa fa-align-left" aria-hidden="true"></i>
                             </button>
-                            <button name="minus" class="txtStylebtn">
+                        <button name="minus" class="txtStylebtn">
                                 <i class="fa fa-minus" aria-hidden="true"></i>
                             </button>
-                            <button name="plus" class="txtStylebtn">
+                        <button name="plus" class="txtStylebtn">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
                             </button>
-                            <button name="color" class="txtStylebtn">
+                        <button name="color" class="txtStylebtn">
                                 <i class="fa fa-tint" aria-hidden="true"></i>
                             </button>
 
-                            <button>A</button>
+                        <button>A</button>
 
-                            <button>
+                        <button>
                                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                             </button>
-                        
+
                     </div>
                 </div>
-            <button id="download" onclick="downloadImg(this)">
+                <button id="download" onclick="downloadImg(this)">
                     Download as image<i class="fa fa-download" aria-hidden="true"></i>
             </button>
         </section>
 
-        <summary class="about flex flex-row">
-            <div>
-                <div class="hexagon img-responsive"  style="background-image: url(img/ShayPeleg.jpg)">
-                    <div class="hexTop"></div>
-                    <div class="hexBottom"></div>
-                </div>
-                <!--<img class="img-responsive img__shay" src="img/ShayPeleg.jpg" alt="Shay Peleg">-->
+        <summary class="about">
+            <div class="container__shay">
+                <img class="img-responsive img__shay" src="img/profilepic_shay.png" alt="Shay Peleg">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus maiores saepe iure asperiores alias
                     laudantium, consectetur omnis fuga provident dolorum eos nesciunt optio accusamus praesentium aliquam
                     quos perferendis cumque tempora.</p>
-            </div>
-            <div>
-                <div class="hexagon img-responsive"  style="background-image: url(img/MarkFridman.jpg)">
-                    <div class="hexTop"></div>
-                    <div class="hexBottom"></div>
+                <div class="about__links">
+                    <a target="_blank" href="https://www.facebook.com/speleg3?fref=ts">
+                        <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+                    </a>
+                    <a target="_blank" href="https://www.linkedin.com/in/pelegshay?authType=NAME_SEARCH&authToken=MyIv&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A255489221%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1481197922074%2Ctas%3Ashay%20p">
+                        <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                    </a>
+                    <a target="_blank" href="https://github.com/shaypeleg1">
+                        <i class="fa fa-github-square fa-2x" aria-hidden="true"></i>
+                    </a>
                 </div>
-                <!--<img class="img-responsive " src="img/MarkFridman.jpg" alt="Mark Fridman">-->
+            </div>
+            <div class="container__mark">
+                <img class="img-responsive " src="img/profilepic_mark.png" alt="Mark Fridman">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis corporis porro minus, sequi doloremque.
                     Facere sequi, distinctio, atque asperiores eveniet eligendi vero illum pariatur rerum deleniti itaque
                     magni est neque.</p>
+                <div class="about__links">
+                    <a target="_blank" href="https://www.facebook.com/mark.fridman">
+                        <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+                    </a>
+                    <a target="_blank" href="https://www.linkedin.com/in/mark-fridman-44400396?trk=hp-identity-name">
+                        <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                    </a>
+                    <a target="_blank" href="https://github.com/ResorceBasedEconomy">
+                        <i class="fa fa-github-square fa-2x" aria-hidden="true"></i>
+                    </a>
+                </div>
             </div>
+            <div class="claerBoth"></div>
         </summary>
 
         <div class="contact flex space-around">

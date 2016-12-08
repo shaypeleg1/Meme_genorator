@@ -41,15 +41,15 @@
 
                 <div class="tools__container flex flex-column space-around">
                     <div>
-                        <input class="topText" type="text" placeholder="Type Top Text Here.." onkeyup="buttonIntersec('text' , this.value , 'topText')"></input>
+                        <input class="topText" type="text" placeholder="Type Top Text Here.." onkeyup="buttonIntersec('topText', 'text' , this.value)"></input>
 
-                        <button name="align-left" class="txtStylebtn" >
+                        <button name="align-left" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'left')"  >
                            <i class="fa fa-align-left" aria-hidden="true"></i>
                         </button>
-                        <button name="align-center" class="txtStylebtn">
+                        <button name="align-center" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'center')">
                             <i class="fa fa-align-center" aria-hidden="true"></i>
                         </button>
-                        <button name="align-right" class="txtStylebtn">
+                        <button name="align-right" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'right')">
                           <i class="fa fa-align-right" aria-hidden="true"></i>
                         </button>
                         <button name="minus" class="txtStylebtn">
@@ -69,7 +69,7 @@
                         </button>
                     </div>
                     <div>
-                        <input class="bottomText" type="text" placeholder="Type Bottom Text Here.." onkeyup="buttonIntersec('text' , this.value , 'bottomText')"></input>
+                        <input class="bottomText" type="text" placeholder="Type Bottom Text Here.." onkeyup="buttonIntersec('bottomText', 'text' , this.value )"></input>
                         
                             <button name="align-left" class="txtStylebtn" >
                                 <i class="fa fa-align-left" aria-hidden="true"></i>

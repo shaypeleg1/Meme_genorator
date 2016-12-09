@@ -60,9 +60,13 @@ section {
     // margin: 100px;
   }
   .button-green {
-        background-color: #2eb398;
-        color: #d7fcf5;
-        border: none;
+    background-color: #2eb398;
+    font-family: var(--secondary-font);
+    color: #d7fcf5;
+    border: none;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 22px;
   }
   .btn__container {
 
@@ -130,6 +134,10 @@ section {
   width: 100%;
   background-color: var(--main-color);
   color: #bebebe;
+  > div:first-of-type {
+    margin-top: 65px;
+    margin-bottom: 65px;
+  }
   .side-contact {
     font-family: var(--secondary-font);
     font-size: 12px;
@@ -137,7 +145,7 @@ section {
     .direction-details {
       width: 180px;
       font-weight: 400;
-      margin-bottom: 40px;
+      margin-bottom: 14px;
       span {
         color: #e0e0e0;;
         font-weight: 900;
@@ -151,11 +159,14 @@ section {
   }
 }
 
+
 footer {
   width: 100%;
   background-color: #222;
   color: #3e3e3e;
-  height: 45px;
+  height: 43px;
+  vertical-align: middle;
+  line-height: 45px;
 }
 
 @mixin for-mobile-only {

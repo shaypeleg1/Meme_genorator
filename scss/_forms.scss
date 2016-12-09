@@ -5,17 +5,37 @@
 }
 form {
   margin-right: 20px;
+  .button-green {
+    width: 90px;
+    height: 37px;
+    float: right;
+    }
+}
+
+input, textarea {
+  background-color : #454545;
+  color: #bebebe;
+  font-family: var(--secondary-font);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 22px;
 }
 .form-control {
   border: none;
-  border-bottom: 1px solid #000;
   background-color: transparent;
   width: 100%;
   padding: 0.5em 0.2em;
+  color: #bebebe;
+  background-color: #454545;
+  font-family: var(--secondary-font);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 22px;
 }
 
 .form-group {
   margin: 1em 0;
+  margin-top: 0px;
 }
 .form-title {
   height: auto;

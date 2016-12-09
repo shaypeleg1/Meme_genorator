@@ -13,18 +13,19 @@
 <body>
     <nav>
         <div class="flex nav__container">
-            <div>xxxx</div>
-            <div>xxxx</div>
+            <div>portfolio</div>
+            <div>about</div>
             <div>
                 <img class="ImgArrow" src="img/nav_arrow.png">
-                <div class="navArrow"></div>
             </div>
-            <div>xxxx</div>
-            <div>xxxx</div>
+            <div>blog</div>
+            <div>get in touch</div>
         </div>
     </nav>
     <div class="inner-container">
-        <h1 class="app-logo">Mem-Hive</h1>
+
+        <div class="navArrow"></div>
+        <h1 class="app-logo">Meme-Hive</h1>
 
         <section>
             <main class="mainPreview flex flex-column justify-center align-center">
@@ -33,80 +34,86 @@
                     <button class="btn button-green" onclick="addUserMem()">Add your own mem</button>
                     <button class="btn button-green" onclick="sortByPopular()">Most Popular</button>
                 </div>
-                    <ul class="gallery clr">
-                        <!--Hexagons renders here-->
-                    </ul>
+                <ul class="gallery clr">
+                    <!--Hexagons renders here-->
+                </ul>
                 <div class="common-search"></div>
             </main>
 
-            <section class="memeGen">
-                <canvas id="canvas">Sorry, no canvas available</canvas>
-                <br/>
-                <div class="tools flex flex-column space-around ">
+            <section class="memeGen flex">
+
+                <!--<div class="tools flex flex-column space-around ">-->
+                <!--</div>-->
+                <div class="tools__container flex flex-column">
 
                     <button class="btn button-green">back to choose another meme</button>
 
-                    <div class="tools__container flex flex-column space-around">
-                        <div>
-                            <input class="topText" type="text" placeholder="Type Top Text Here.." onkeyup="buttonIntersec('topText', 'text' , this.value)"></input>
 
-                            <button name="align-right" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'end')">
-                            <i class="fa fa-align-right" aria-hidden="true"></i>
-                            </button>
-                            <button name="align-center" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'center')">
-                                <i class="fa fa-align-center" aria-hidden="true"></i>
-                            </button>
-                            <button name="align-left" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'start')">
+                    <div class="btn__container">
+                    <input class="topText" type="text" placeholder="Type Top Text Here.." onkeyup="buttonIntersec('topText', 'text' , this.value)"></input>
+
+                        <button name="align-right" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'end')">
                             <i class="fa fa-align-left" aria-hidden="true"></i>
-                            </button>
-                            <button name="minus" class="txtStylebtn">
+                        </button>
+                        <button name="align-center" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'center')">
+                                <i class="fa fa-align-center" aria-hidden="true"></i>
+                        </button>
+                        <button name="align-left" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'start')">
+                            <i class="fa fa-align-right" aria-hidden="true"></i>
+                        </button>
+                        <button name="minus" class="txtStylebtn">
                                 <i class="fa fa-minus" aria-hidden="true"></i>
-                            </button>
-                            <button name="plus" class="txtStylebtn">
+                        </button>
+                        <button name="plus" class="txtStylebtn">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
-                            </button>
-                            <button name="color" class="txtStylebtn">
+                        </button>
+                        <button name="color" class="txtStylebtn">
                                 <input type="color" class="hideColorPicker">
                                 <i class="fa fa-tint" aria-hidden="true"></i>
-                            </button>
-                            <!--<button name="shadow" class="txtStylebtn"></button>-->
-                            <button>A</button>
-                            <button>
+                        </button>
+                        <button name="shadow" class="txtStylebtn shadow" onclick="buttonIntersec('topText', 'shadow' , 'clicked')">A</button>
+                        <button>A</button>
+                        <button >
                                 <i class="fa fa-trash-o" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                        <div>
-                            <input class="bottomText" type="text" placeholder="Type Bottom Text Here.." onkeyup="buttonIntersec('bottomText', 'text' , this.value )"></input>
+                        </button>
+                    </div>
 
-                            <button name="align-right" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'end')">
-                                    <i class="fa fa-align-right" aria-hidden="true"></i>
-                                </button>
-                            <button name="align-center" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'center')">
-                                    <i class="fa fa-align-center" aria-hidden="true"></i>
-                                </button>
-                            <button name="align-left" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'start')">
-                                    <i class="fa fa-align-left" aria-hidden="true"></i>
-                                </button>
-                            <button name="minus" class="txtStylebtn">
-                                    <i class="fa fa-minus" aria-hidden="true"></i>
-                                </button>
-                            <button name="plus" class="txtStylebtn">
-                                    <i class="fa fa-plus" aria-hidden="true"></i>
-                                </button>
-                            <button name="color" class="txtStylebtn">
-                                    <i class="fa fa-tint" aria-hidden="true"></i>
-                                </button>
-                            <button>A</button>
-                            <button>
-                                <i class="fa fa-trash-o" aria-hidden="true"></i>
-                            </button>
+                    <canvas id="canvas">Sorry, no canvas available</canvas>
 
-                        </div>
+
+                    <div class="btn__container">
+                    <input class="bottomText" type="text" placeholder="Type Bottom Text Here.." onkeyup="buttonIntersec('bottomText', 'text' , this.value )"></input>
+
+                        <button name="align-right" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'end')">
+                            <i class="fa fa-align-left" aria-hidden="true"></i>
+                        </button>
+                        <button name="align-center" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'center')">
+                            <i class="fa fa-align-center" aria-hidden="true"></i>
+                        </button>
+                        <button name="align-left" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'start')">
+                            <i class="fa fa-align-right" aria-hidden="true"></i>
+                        </button>
+                        <button name="minus" class="txtStylebtn">
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </button>
+                        <button name="plus" class="txtStylebtn">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </button>
+                        <button name="color" class="txtStylebtn">
+                            <i class="fa fa-tint" aria-hidden="true"></i>
+                        </button>
+                        <button name="shadow" class="txtStylebtn shadow" onclick="buttonIntersec('bottomText', 'shadow' , 'clicked')">A</button>
+                        <button>A</button>
+                        <button>
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </button>
+
                     </div>
                     <button id="download" class="btn button-green" onclick="downloadImg(this)">
                         Download as image<i class="fa fa-download" aria-hidden="true"></i>
                     </button>
-                    <div class="claerBoth"></div>
+                </div>
+                <div class="claerBoth"></div>
             </section>
 
             <summary class="about clearBoth">
@@ -179,7 +186,8 @@
                     <div class="side-contact">
                         <div class="direction-details">
                             <span>Quisque Hendrerit:</span>&nbsp; purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae
-                            aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus morbi vitae.
+                            aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus morbi
+                            vitae.
                         </div>
                         <div class="address">
                             <img class="ImgAddress" src="img/location.png"> Elm St. 14/05 Lost City <br>

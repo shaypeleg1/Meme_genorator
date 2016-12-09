@@ -4,7 +4,10 @@ console.log('text tool');
 // listen to click on text butoons and get the direction and property 
 $('.txtStylebtn').click(function () {
     var txtProp = this.name;
+    debugger;
     var txtEl = $(this).parents().children(':first-child');
+    console.log('texEl',txtEl);
+    console.log('txtProp',txtProp);
     var txtDirection = txtEl[0].className;
     buttonIntersec(txtDirection,txtProp);
 });
@@ -25,7 +28,7 @@ function buttonIntersec(direction, prop, value) {
             gState[direction].align = value; 
         break;
         case 'shadow':
-            // gState[direction].shadow = true; 
+            gState[direction].shadow = true;   
         break;
     }
     drawTextOnCanvas(gState);
@@ -37,10 +40,10 @@ function drawTextOnCanvas(gTextObj) {
     gCtx.drawImage(elImg, 0, 0, elImg.width, elImg.height);
     // add shadow
     if(gTextObj['topText'].shadow) {
-        ctx.shadowColor = "black";
-        ctx.shadowOffsetX = 3; 
-        ctx.shadowOffsetY = 3; 
-        ctx.shadowBlur = 3;
+        gCtx.shadowColor = "black";
+        gCtx.shadowOffsetX = 5; 
+        gCtx.shadowOffsetY = 5; 
+        gCtx.shadowBlur = 3;
     }
     // set text styles
     gCtx.fillStyle = gTextObj['topText'].color;

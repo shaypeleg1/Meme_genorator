@@ -3,12 +3,16 @@ nav {
     height: 100%;
     color: white;
     .nav__container {
-    width: 300px;
+    width: 375px;
     margin: auto;
-    display: flex;
-    /* height: 50px; */
     text-align: center;
     justify-content: space-around;
+    font-family: Lato;
+    text-transform: uppercase;
+    div {
+        align-self: center;
+        font-size: 12px;
+    }
     }
 }
 .navArrow {
@@ -18,6 +22,7 @@ nav {
     border-right: 45px solid transparent;
     border-top: 25px solid var(--main-color);
     margin: 0 auto;
+    padding-bottom: 30px;
 }
 .ImgArrow {
     width: 64px;

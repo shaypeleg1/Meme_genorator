@@ -2,35 +2,39 @@
 console.log('text tool');
 
 // listen to click on text butoons and get the direction and property 
-$('.txtStylebtn').click(function () {
-    var txtProp = this.name;
-    var txtEl = $(this).parents().children(':first-child');
-    var txtDirection = txtEl[0].className;
-    buttonIntersec(txtDirection,txtProp);
-});
+// $('.txtStylebtn').click(function () {
+//     var txtProp = this.name;
+//     var txtEl = $(this).parents().children(':first-child');
+//     var txtDirection = txtEl[0].className;
+//     buttonIntersec(txtDirection,txtProp);
+// });
 
 // updates the gState props and sends to drawTextOnCanvas
 function buttonIntersec(direction, prop, elValue) {
     switch(prop) {
         case 'text':
             gState[direction].text = elValue;
-        break;
+            break;
         case 'plus':
-            gState[direction].size++;
-        break;
+            gState[direction].size += 7;
+            break;
         case 'minus':
-            gState[direction].size--;
-        break;
+            gState[direction].size -= 7;
+             break;
         case 'align':
             gState[direction].align = elValue; 
-        break;
+            break;
         case 'shadow':
             gState[direction].shadow? gState[direction].shadow = false : gState[direction].shadow = true;  
-        break;
+            break;
+        case 'color':
+            gState[direction].color = elValue;
+            break;
         case 'trash':
             var elInput = document.querySelector('.' + direction);
             elInput.value = elValue;
             gState[direction].text = elValue;
+            break;
     }
     drawTextOnCanvas(gState);
 }
@@ -39,7 +43,6 @@ function buttonIntersec(direction, prop, elValue) {
 function drawTextOnCanvas(gTextObj) {
     var elImg = gState.currElImg;
     gState.ctx.drawImage(elImg, 0, 0, elImg.width, elImg.height);
-
     var topText = gTextObj['topText'].text;
     var bottomText = gTextObj['bottomText'].text;
     var x = elImg.width/2;
@@ -55,12 +58,13 @@ function drawTextOnCanvas(gTextObj) {
         gState.ctx.shadowOffsetX = 0; 
         gState.ctx.shadowOffsetY = 0;
     }
-
     gState.ctx.strokeStyle = 'black';
     gState.ctx.lineWidth = 8;
     // ctx.fillStyle = 'white';
 
     // set text styles
+
+
     gState.ctx.fillStyle = gTextObj['topText'].color;
     gState.ctx.textAlign = gTextObj['topText'].align;
     gState.ctx.font = gTextObj['topText'].size+'px '+gTextObj['bottomText'].font;
@@ -68,6 +72,7 @@ function drawTextOnCanvas(gTextObj) {
     gState.ctx.strokeText(topText , x, yTop);
     gState.ctx.fillText(topText , x, yTop); 
 
+    gState.ctx.fillStyle = gTextObj['bottomText'].color; 
     gState.ctx.fillStyle = gTextObj['bottomText'].color;
     gState.ctx.textAlign = gTextObj['bottomText'].align;
     gState.ctx.font = gTextObj['bottomText'].size+'px '+gTextObj['bottomText'].font;
@@ -86,7 +91,6 @@ function scrollToPosition(direction) {
     
         case 'about':
             window.scrollTo(0, document.querySelector(".about").offsetTop);
-            
             break;
 
         case 'contact':

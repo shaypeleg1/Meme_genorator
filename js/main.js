@@ -12,7 +12,7 @@ var gState = {
         text: '',
         align: 'center',
         size: 60,
-        color: 'white',
+        color: '#fff',
         font: 'Segoe UI',
         shadow: false
     },
@@ -21,7 +21,7 @@ var gState = {
         text: '',
         align: 'center',
         size: 60,
-        color: 'white',
+        color: '#fff',
         font: 'Segoe UI',
         shadow: false
     }

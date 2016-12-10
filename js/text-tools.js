@@ -4,10 +4,7 @@ console.log('text tool');
 // listen to click on text butoons and get the direction and property 
 $('.txtStylebtn').click(function () {
     var txtProp = this.name;
-    debugger;
     var txtEl = $(this).parents().children(':first-child');
-    console.log('texEl',txtEl);
-    console.log('txtProp',txtProp);
     var txtDirection = txtEl[0].className;
     buttonIntersec(txtDirection,txtProp);
 });
@@ -28,7 +25,7 @@ function buttonIntersec(direction, prop, value) {
             gState[direction].align = value; 
         break;
         case 'shadow':
-            gState[direction].shadow = true;   
+            gState[direction].shadow? gState[direction].shadow = false : gState[direction].shadow = true;  
         break;
     }
     drawTextOnCanvas(gState);
@@ -44,6 +41,9 @@ function drawTextOnCanvas(gTextObj) {
         gCtx.shadowOffsetX = 5; 
         gCtx.shadowOffsetY = 5; 
         gCtx.shadowBlur = 3;
+    } else {
+        gCtx.shadowOffsetX = 0; 
+        gCtx.shadowOffsetY = 0;
     }
     // set text styles
     gCtx.fillStyle = gTextObj['topText'].color;
@@ -59,6 +59,11 @@ function drawTextOnCanvas(gTextObj) {
     gCtx.fillText(gTextObj['bottomText'].text, elImg.width/2, elImg.height*0.85); 
 }
 
+function jumpToMainPreview() {
+    window.scrollTo(0, document.querySelector(".mainPreview").offsetTop);
+    var elMemeGen = document.querySelector('.memeGen');
+    elMemeGen.style.display = "none";
+}
 
 
 

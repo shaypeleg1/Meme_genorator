@@ -185,6 +185,9 @@ function memClick(elMem) {
         return meme.id === parseInt(elMem.id);
     });
     drawImgOnCanvas(currMeme.url);
+    var elMemeGen = document.querySelector('.memeGen');
+    elMemeGen.style.display = "block";
+    window.scrollTo(0, document.querySelector(".memeGen").offsetTop);
     currMeme.rating++;
 }
 
@@ -204,3 +207,4 @@ function drawImgOnCanvas(imgUrlStr) {
 
     gCtx.drawImage(elImg, 0, 0, imgx, imgy);
 }
+

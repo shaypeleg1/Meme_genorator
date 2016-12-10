@@ -10,10 +10,10 @@ $('.txtStylebtn').click(function () {
 });
 
 // updates the gState props and sends to drawTextOnCanvas
-function buttonIntersec(direction, prop, value) {
+function buttonIntersec(direction, prop, elValue) {
     switch(prop) {
         case 'text':
-            gState[direction].text = value;
+            gState[direction].text = elValue;
         break;
         case 'plus':
             gState[direction].size++;
@@ -22,11 +22,15 @@ function buttonIntersec(direction, prop, value) {
             gState[direction].size--;
         break;
         case 'align':
-            gState[direction].align = value; 
+            gState[direction].align = elValue; 
         break;
         case 'shadow':
             gState[direction].shadow? gState[direction].shadow = false : gState[direction].shadow = true;  
         break;
+        case 'trash':
+            var elInput = document.querySelector('.' + direction);
+            elInput.value = elValue;
+            gState[direction].text = elValue;
     }
     drawTextOnCanvas(gState);
 }
@@ -59,10 +63,22 @@ function drawTextOnCanvas(gTextObj) {
     gCtx.fillText(gTextObj['bottomText'].text, elImg.width/2, elImg.height*0.85); 
 }
 
-function jumpToMainPreview() {
-    window.scrollTo(0, document.querySelector(".mainPreview").offsetTop);
-    var elMemeGen = document.querySelector('.memeGen');
-    elMemeGen.style.display = "none";
+function scrollToPosition(direction) {
+    switch(direction){
+        case 'main':
+            window.scrollTo(0, document.querySelector(".mainPreview").offsetTop);
+            var elMemeGen = document.querySelector('.memeGen');
+            elMemeGen.style.display = "none";
+            break;
+    
+        case 'about':
+            window.scrollTo(0, document.querySelector(".about").offsetTop);
+            break;
+
+        case 'contact':
+            window.scrollTo(0, document.querySelector(".form-title").offsetTop);
+            break;
+    }
 }
 
 

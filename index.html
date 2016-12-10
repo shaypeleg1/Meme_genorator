@@ -13,13 +13,13 @@
 <body>
     <nav>
         <div class="flex nav__container">
-            <div>portfolio</div>
-            <div>about</div>
+            <div class="btn">portfolio</div>
+            <div class="btn" onclick="scrollToPosition('about')">about</div>
             <div>
                 <img class="ImgArrow" src="img/nav_arrow.png">
             </div>
-            <div>blog</div>
-            <div>get in touch</div>
+            <div class="btn">blog</div>
+            <div class="btn" onclick="scrollToPosition('contact')">get in touch</div>
         </div>
     </nav>
     <div class="inner-container">
@@ -46,68 +46,73 @@
                 <!--</div>-->
                 <div class="tools__container flex flex-column">
 
-                    <button class="btn button-green home" onclick="jumpToMainPreview()">back to choose another meme</button>
+                    <button class="btn button-green home" onclick="scrollToPosition('main')">back to choose another meme</button>
 
 
-                    <div class="btn__container">
-                    <input class="topText" type="text" placeholder="Type Top Text Here.." onkeyup="buttonIntersec('topText', 'text' , this.value)"></input>
-
-                        <button name="align-right" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'end')">
-                            <i class="fa fa-align-left" aria-hidden="true"></i>
-                        </button>
-                        <button name="align-center" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'center')">
-                                <i class="fa fa-align-center" aria-hidden="true"></i>
-                        </button>
-                        <button name="align-left" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'start')">
-                            <i class="fa fa-align-right" aria-hidden="true"></i>
-                        </button>
-                        <button name="minus" class="txtStylebtn">
-                                <i class="fa fa-minus" aria-hidden="true"></i>
-                        </button>
-                        <button name="plus" class="txtStylebtn">
-                                <i class="fa fa-plus" aria-hidden="true"></i>
-                        </button>
-                        <button name="color" class="txtStylebtn">
-                                <input type="color" class="hideColorPicker">
-                                <i class="fa fa-tint" aria-hidden="true"></i>
-                        </button>
-                        <button name="shadow" class="shadow" onclick="buttonIntersec('topText', 'shadow' , 'clicked')">A</button>
-                        <button>A</button>
-                        <button >
-                                <i class="fa fa-trash-o" aria-hidden="true"></i>
-                        </button>
+                    <div class="btn__container flex flex-column">
+                        <div>
+                            <input class="topText" type="text" placeholder="Type Top Text Here.." onkeyup="buttonIntersec('topText', 'text' , this.value)"></input>
+                        </div>
+                        <div>
+                            <button name="align-right" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'end')">
+                                <i class="fa fa-align-left" aria-hidden="true"></i>
+                            </button>
+                            <button name="align-center" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'center')">
+                                    <i class="fa fa-align-center" aria-hidden="true"></i>
+                            </button>
+                            <button name="align-left" class="txtStylebtn" onclick="buttonIntersec('topText', 'align' , 'start')">
+                                <i class="fa fa-align-right" aria-hidden="true"></i>
+                            </button>
+                            <button name="minus" class="txtStylebtn">
+                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                            </button>
+                            <button name="plus" class="txtStylebtn">
+                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                            </button>
+                            <button name="color" class="txtStylebtn">
+                                    <input type="color" class="hideColorPicker">
+                                    <i class="fa fa-tint" aria-hidden="true"></i>
+                            </button>
+                            <button name="shadow" class="shadow" onclick="buttonIntersec('topText', 'shadow' , 'clicked')">A</button>
+                            <button>A</button>
+                            <button name="trash" onclick="buttonIntersec('topText', 'trash' , '')">
+                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                            </button>
+                        </div>
                     </div>
 
                     <canvas id="canvas">Sorry, no canvas available</canvas>
 
 
-                    <div class="btn__container">
-                    <input class="bottomText" type="text" placeholder="Type Bottom Text Here.." onkeyup="buttonIntersec('bottomText', 'text' , this.value )"></input>
-
-                        <button name="align-right" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'end')">
-                            <i class="fa fa-align-left" aria-hidden="true"></i>
-                        </button>
-                        <button name="align-center" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'center')">
-                            <i class="fa fa-align-center" aria-hidden="true"></i>
-                        </button>
-                        <button name="align-left" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'start')">
-                            <i class="fa fa-align-right" aria-hidden="true"></i>
-                        </button>
-                        <button name="minus" class="txtStylebtn">
-                            <i class="fa fa-minus" aria-hidden="true"></i>
-                        </button>
-                        <button name="plus" class="txtStylebtn">
-                            <i class="fa fa-plus" aria-hidden="true"></i>
-                        </button>
-                        <button name="color" class="txtStylebtn">
-                            <i class="fa fa-tint" aria-hidden="true"></i>
-                        </button>
-                        <button name="shadow" class="shadow" onclick="buttonIntersec('topText', 'shadow' , 'clicked')">A</button>
-                        <button>A</button>
-                        <button>
-                            <i class="fa fa-trash-o" aria-hidden="true"></i>
-                        </button>
-
+                    <div class="btn__container flex flex-column">
+                        <div>
+                            <input class="bottomText" type="text" placeholder="Type Bottom Text Here.." onkeyup="buttonIntersec('bottomText', 'text' , this.value )"></input>
+                        </div>
+                        <div>
+                            <button name="align-right" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'end')">
+                                <i class="fa fa-align-left" aria-hidden="true"></i>
+                            </button>
+                            <button name="align-center" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'center')">
+                                <i class="fa fa-align-center" aria-hidden="true"></i>
+                            </button>
+                            <button name="align-left" class="txtStylebtn" onclick="buttonIntersec('bottomText', 'align' , 'start')">
+                                <i class="fa fa-align-right" aria-hidden="true"></i>
+                            </button>
+                            <button name="minus" class="txtStylebtn">
+                                <i class="fa fa-minus" aria-hidden="true"></i>
+                            </button>
+                            <button name="plus" class="txtStylebtn">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </button>
+                            <button name="color" class="txtStylebtn">
+                                <i class="fa fa-tint" aria-hidden="true"></i>
+                            </button>
+                            <button name="shadow" class="shadow" onclick="buttonIntersec('topText', 'shadow' , 'clicked')">A</button>
+                            <button>A</button>
+                            <button name"trash" onclick="buttonIntersec('bottomText', 'trash' , '')">
+                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                            </button>
+                        </div>
                     </div>
                     <button id="download" class="btn button-green" onclick="downloadImg(this)">
                         Download as image<i class="fa fa-download" aria-hidden="true"></i>

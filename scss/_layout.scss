@@ -25,28 +25,33 @@ section {
   width: 100%;
   background-color: lightgray;
 }
+.btn__container > div > input {
+  width:60%;
+  padding: 8px;
+  margin: 9px 0;
+  font-size: 20px;
+  background-color:  #454545;
+  @include for-mobile-only {
+    width:100%;
+  }
+}
 .memeGen {
   display: none;
   width: 100%;
-  background-color: var(--sections-bg);
   justify-content: center;
   align-items: center;
+  background-color: var(--main-color);
 
   .img {
     height: 100%;
     max-height: 40%;
     max-width: 55%;
-    background-color: blue;  
 
     .tools__container {
       height: 100%;
       align-items: center;
       margin: 30px 0;
-
-      input {
-        width: 60%;
-        align-self: center;
-      }
+      
     }
 
     button {
@@ -55,27 +60,40 @@ section {
     } 
   }
   #download {
-    height: 30px;
+    border-bottom: solid 3px var(--main-color);
+  }
+  .home {
+    border-top: solid 3px var(--main-color);
   }
 }
   #canvas {
     width: 100%;
     max-width: 55%;
     align-self: center;
-    // margin: 100px;
+  @include for-mobile-only {
+    max-width: 100%;
+  }
   }
   .button-green {
+    height: 30px;
+    width: 60%;
     background-color: #2eb398;
     font-family: var(--secondary-font);
     color: #d7fcf5;
     border: none;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 700;
     line-height: 22px;
+    align-self: center;
+    @include for-mobile-only {
+      width: 100%;
+    }
   }
   .btn__container {
-    background-color: #3e3e3e;
     text-align: center;
+    div {
+      margin-bottom: 8px;
+    }
     button {
       padding: 10px 14px;
       

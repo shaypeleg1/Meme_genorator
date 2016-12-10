@@ -37,8 +37,8 @@ function buttonIntersec(direction, prop, elValue) {
 
 // renders the canvas with the current img and text
 function drawTextOnCanvas(gTextObj) {
-    var elImg = gCurrElImg;
-    gCtx.drawImage(elImg, 0, 0, elImg.width, elImg.height);
+    var elImg = gState.currElImg;
+    gState.ctx.drawImage(elImg, 0, 0, elImg.width, elImg.height);
 
     var topText = gTextObj['topText'].text;
     var bottomText = gTextObj['bottomText'].text;
@@ -47,45 +47,46 @@ function drawTextOnCanvas(gTextObj) {
     var yBottom = elImg.height*0.85;
     // add shadow
     if(gTextObj['topText'].shadow) {
-        gCtx.shadowColor = "black";
-        gCtx.shadowOffsetX = 7; 
-        gCtx.shadowOffsetY = 7; 
-        gCtx.shadowBlur = 1;
+        gState.ctx.shadowColor = "black";
+        gState.ctx.shadowOffsetX = 7; 
+        gState.ctx.shadowOffsetY = 7; 
+        gState.ctx.shadowBlur = 1;
     } else {
-        gCtx.shadowOffsetX = 0; 
-        gCtx.shadowOffsetY = 0;
+        gState.ctx.shadowOffsetX = 0; 
+        gState.ctx.shadowOffsetY = 0;
     }
 
-    gCtx.strokeStyle = 'black';
-    gCtx.lineWidth = 8;
+    gState.ctx.strokeStyle = 'black';
+    gState.ctx.lineWidth = 8;
     // ctx.fillStyle = 'white';
 
     // set text styles
-    gCtx.fillStyle = gTextObj['topText'].color;
-    gCtx.textAlign = gTextObj['topText'].align;
-    gCtx.font = gTextObj['topText'].size+'px '+gTextObj['bottomText'].font;
+    gState.ctx.fillStyle = gTextObj['topText'].color;
+    gState.ctx.textAlign = gTextObj['topText'].align;
+    gState.ctx.font = gTextObj['topText'].size+'px '+gTextObj['bottomText'].font;
     // draw top text on canvas 
-    gCtx.strokeText(topText , x, yTop);
-    gCtx.fillText(topText , x, yTop); 
+    gState.ctx.strokeText(topText , x, yTop);
+    gState.ctx.fillText(topText , x, yTop); 
 
-    gCtx.fillStyle = gTextObj['bottomText'].color;
-    gCtx.textAlign = gTextObj['bottomText'].align;
-    gCtx.font = gTextObj['bottomText'].size+'px '+gTextObj['bottomText'].font;
+    gState.ctx.fillStyle = gTextObj['bottomText'].color;
+    gState.ctx.textAlign = gTextObj['bottomText'].align;
+    gState.ctx.font = gTextObj['bottomText'].size+'px '+gTextObj['bottomText'].font;
     // draw bottom text on canvas 
-    gCtx.strokeText(bottomText , x, yBottom);
-    gCtx.fillText(bottomText, x, yBottom); 
+    gState.ctx.strokeText(bottomText , x, yBottom);
+    gState.ctx.fillText(bottomText, x, yBottom); 
 }
 
 function scrollToPosition(direction) {
     switch(direction){
         case 'main':
-            window.scrollTo(0, document.querySelector(".mainPreview").offsetTop);
+            window.scrollTo(0, document.querySelector('.mainPreview').offsetTop);
             var elMemeGen = document.querySelector('.memeGen');
             elMemeGen.style.display = "none";
             break;
     
         case 'about':
             window.scrollTo(0, document.querySelector(".about").offsetTop);
+            
             break;
 
         case 'contact':
@@ -97,7 +98,7 @@ function scrollToPosition(direction) {
 // setting proper filename for the download.
 function downloadImg(elLink) {
     debugger;
-    elLink.href = gCanvas.toDataURL();
+    elLink.href = gState.canvas.toDataURL();
     elLink.download = 'perfectMeme.jpg';
 }
 

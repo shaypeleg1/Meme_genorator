@@ -15,12 +15,14 @@ section {
   margin: 0 auto;
   padding: 0 1em;
 }
-
+.search {
+  width: 100%;
+  border: none;
+}
 .toolbar {
-  height: 100px;
+  padding-bottom: 50px;
 }
 .common-search {
-  height: 200px;
   width: 100%;
   background-color: lightgray;
 }
@@ -29,7 +31,7 @@ section {
   padding: 8px;
   margin: 9px 0;
   font-size: 20px;
-  background-color:  #454545;
+  border: none;
   @include for-mobile-only {
     width:100%;
   }
@@ -75,13 +77,13 @@ section {
   }
   }
   .button-green {
-    height: 30px;
-    width: 60%;
+    width: 100%;
+    padding: 10px;
     background-color: #2eb398;
     font-family: var(--secondary-font);
     color: #d7fcf5;
     border: none;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 700;
     line-height: 22px;
     align-self: center;
@@ -116,6 +118,7 @@ section {
   h1 {
     text-align: center;
     color: #d7fcf5;
+    margin: em(5px) 0 0 0;
   }
   h3 {
     margin: 0 0 1em 0;
@@ -166,6 +169,7 @@ section {
   width: 100%;
   background-color: var(--main-color);
   color: #bebebe;
+  
   > div:first-of-type {
     margin-top: 65px;
     margin-bottom: 65px;

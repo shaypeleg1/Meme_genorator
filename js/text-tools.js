@@ -39,28 +39,41 @@ function buttonIntersec(direction, prop, elValue) {
 function drawTextOnCanvas(gTextObj) {
     var elImg = gCurrElImg;
     gCtx.drawImage(elImg, 0, 0, elImg.width, elImg.height);
+
+    var topText = gTextObj['topText'].text;
+    var bottomText = gTextObj['bottomText'].text;
+    var x = elImg.width/2;
+    var yTop = elImg.height*0.2;
+    var yBottom = elImg.height*0.85;
     // add shadow
     if(gTextObj['topText'].shadow) {
         gCtx.shadowColor = "black";
-        gCtx.shadowOffsetX = 5; 
-        gCtx.shadowOffsetY = 5; 
-        gCtx.shadowBlur = 3;
+        gCtx.shadowOffsetX = 7; 
+        gCtx.shadowOffsetY = 7; 
+        gCtx.shadowBlur = 1;
     } else {
         gCtx.shadowOffsetX = 0; 
         gCtx.shadowOffsetY = 0;
     }
+
+    gCtx.strokeStyle = 'black';
+    gCtx.lineWidth = 8;
+    // ctx.fillStyle = 'white';
+
     // set text styles
     gCtx.fillStyle = gTextObj['topText'].color;
     gCtx.textAlign = gTextObj['topText'].align;
     gCtx.font = gTextObj['topText'].size+'px '+gTextObj['bottomText'].font;
     // draw top text on canvas 
-    gCtx.fillText(gTextObj['topText'].text, elImg.width/2, elImg.height*0.2); 
+    gCtx.strokeText(topText , x, yTop);
+    gCtx.fillText(topText , x, yTop); 
 
     gCtx.fillStyle = gTextObj['bottomText'].color;
     gCtx.textAlign = gTextObj['bottomText'].align;
     gCtx.font = gTextObj['bottomText'].size+'px '+gTextObj['bottomText'].font;
     // draw bottom text on canvas 
-    gCtx.fillText(gTextObj['bottomText'].text, elImg.width/2, elImg.height*0.85); 
+    gCtx.strokeText(bottomText , x, yBottom);
+    gCtx.fillText(bottomText, x, yBottom); 
 }
 
 function scrollToPosition(direction) {
@@ -80,7 +93,13 @@ function scrollToPosition(direction) {
             break;
     }
 }
-
+//  This is the function that will take care of image extracting and
+// setting proper filename for the download.
+function downloadImg(elLink) {
+    debugger;
+    elLink.href = gCanvas.toDataURL();
+    elLink.download = 'perfectMeme.jpg';
+}
 
 
 

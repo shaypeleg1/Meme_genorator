@@ -1,6 +1,7 @@
 'use strict';
 // ------  Globals ------- //
 var gCurrElImg;
+var gCanvas;
 var gCtx;
 var gKeywordsRating = {};
 var gState = {
@@ -124,8 +125,8 @@ function renderHex(memObj) {
 }
 
 function initCanvas() {
-    var canvas = document.querySelector('canvas');
-    gCtx = canvas.getContext('2d');
+    gCanvas = document.querySelector('#canvas');
+    gCtx = gCanvas.getContext('2d');
 }
 
 // get string from user and serch if which objects key words
@@ -142,7 +143,7 @@ function searchForKeyword(string) {
     });
     if (matchedMemes.length !== 0) {
         renderGallery(matchedMemes);
-    } else if (string === "") {
+    } else {
         renderGallery(gMemes);
     }
 }

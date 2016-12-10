@@ -21,7 +21,7 @@ section {
   border: none;
 }
 .toolbar {
-
+  padding-bottom: 50px;
 }
 .common-search {
   width: 100%;
@@ -170,6 +170,7 @@ section {
   width: 100%;
   background-color: var(--main-color);
   color: #bebebe;
+  
   > div:first-of-type {
     margin-top: 65px;
     margin-bottom: 65px;

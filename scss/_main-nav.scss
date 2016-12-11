@@ -2,12 +2,20 @@ nav {
     background-color: var(--main-color);
     height: 100%;
     color: white;
+    h1 {
+        position: absolute;
+        margin: 8px;
+    @media (max-width: 800px){
+        display: none;
+    }    
+    }
     .nav__container {
     width: 375px;
     margin: auto;
     @include for-mobile-only{
         width: 100%;
     }
+    
     }
 
 

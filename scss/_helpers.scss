@@ -22,7 +22,9 @@
 .flex {
   display: flex;
 }
-
+.flex-start {
+  justify-content: flex-start;
+}
 .align-center {
   align-items: center;
 }

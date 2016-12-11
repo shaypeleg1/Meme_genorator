@@ -25,6 +25,7 @@ section {
 .common-search {
   width: 100%;
   background-color: lightgray;
+  padding: 10px;
 }
 .btn__container > div > input {
   width:60%;
@@ -142,18 +143,26 @@ section {
     @include for-mobile-only {
       margin: 0 auto;
       width: 100%;
-      max-width: 50%;
+      max-width: 90%;
       font-size: em(24px);
+      
     }
   }
   .container__shay {
     float: left;
     margin-left: 100px;
-    
+    @include for-mobile-only {
+      float: none;
+      margin: auto;
+    }
   }
   .container__mark {
     float: right;
     margin-right: 100px;
+    @include for-mobile-only {
+      float: none;
+      margin: auto;
+    }
   }
   .about__links {
     text-align: center;
@@ -169,8 +178,9 @@ section {
   width: 100%;
   background-color: var(--main-color);
   color: #bebebe;
-  
+  padding: 10px;
   > div:first-of-type {
+    width: 100%;
     margin-top: 65px;
     margin-bottom: 65px;
   }

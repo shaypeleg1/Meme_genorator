@@ -101,7 +101,6 @@ function scrollToPosition(direction) {
 //  This is the function that will take care of image extracting and
 // setting proper filename for the download.
 function downloadImg(elLink) {
-    debugger;
     elLink.href = gState.canvas.toDataURL();
     elLink.download = 'perfectMeme.jpg';
 }

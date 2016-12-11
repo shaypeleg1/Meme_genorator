@@ -180,9 +180,11 @@ section {
   color: #bebebe;
   padding: 10px;
   > div:first-of-type {
-    width: 100%;
     margin-top: 65px;
     margin-bottom: 65px;
+    @include for-mobile-only {
+      
+    }
   }
   .side-contact {
     font-family: var(--secondary-font);

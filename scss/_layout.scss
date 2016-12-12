@@ -2,8 +2,8 @@
 section {
   // width: 1400px;
   // margin:0 auto;
+  
 }
-
 .inner-container {
   max-width: var(--inner-container-width);
   margin: auto;
@@ -14,13 +14,28 @@ section {
   // width: var(--container-width);
   margin: 0 auto;
   padding: 0 1em;
+  
+}
+
+.toolbar {
+  padding-bottom: 50px;
+    @include for-mobile-only {
+    padding: 10px;
+  }
+  
+  .btn {
+    margin-top: 10px;
+    transition: all .1s ease-in-out;
+  }
+  .btn:hover {
+    color: white;
+  }
 }
 .search {
   width: 100%;
+  color: white;
   border: none;
-}
-.toolbar {
-  padding-bottom: 50px;
+  font-size: 18px;
 }
 .common-search {
   width: 100%;
@@ -32,7 +47,7 @@ section {
   padding: 8px;
   margin: 9px 0;
   font-size: 20px;
-  border: none;
+  // border: none;
   @include for-mobile-only {
     width:100%;
   }
@@ -53,6 +68,7 @@ section {
       height: 100%;
       align-items: center;
       margin: 30px 0;
+
       
     }
 
@@ -78,9 +94,9 @@ section {
   }
   }
   .button-green {
-    width: 100%;
+    // width: 100%;
     padding: 10px;
-    background-color: #2eb398;
+    background-color: var(--secondary-color);
     font-family: var(--secondary-font);
     color: #d7fcf5;
     border: none;
@@ -89,7 +105,7 @@ section {
     line-height: 22px;
     align-self: center;
     @include for-mobile-only {
-      width: 100%;
+      // width: 100%;
     }
   }
   .btn__container {
@@ -115,7 +131,7 @@ section {
 .about {
   width: 100%;
   height: 550px;
-  background-color: #2eb398;
+  background-color: var(--secondary-color);
   h1 {
     text-align: center;
     color: #d7fcf5;
@@ -166,6 +182,7 @@ section {
   }
   .about__links {
     text-align: center;
+    
   }
   @include for-mobile-only {
       overflow: hidden;
@@ -182,14 +199,14 @@ section {
   > div:first-of-type {
     margin-top: 65px;
     margin-bottom: 65px;
-    @include for-mobile-only {
-      
-    }
   }
   .side-contact {
     font-family: var(--secondary-font);
     font-size: 12px;
     line-height: 22px;
+    @include for-mobile-only {
+      margin-left: 1.3em;
+    }
     .direction-details {
       width: 180px;
       font-weight: 400;

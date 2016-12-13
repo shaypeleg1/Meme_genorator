@@ -5,6 +5,7 @@ section {
   
 }
 .inner-container {
+  display: none;
   max-width: var(--inner-container-width);
   margin: auto;
   border-left: 1px solid #bebebe; 

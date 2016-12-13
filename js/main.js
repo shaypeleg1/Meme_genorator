@@ -36,6 +36,11 @@ $(document).ready(function () {
     initCanvas();
 });
 
+$(document).ready(function() {
+    $(".loading-container" ).css({"display": "none"});
+    $(".inner-container" ).css({"display": "block"});
+});
+
 // clean and print new memes gallery
 function renderGallery(memes) {
     $(".gallery").empty();

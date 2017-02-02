@@ -131,7 +131,7 @@ section {
 }
 .about {
   width: 100%;
-  height: 575px;
+  height: 550px;
   background-color: var(--secondary-color);
 
   h1 {
@@ -190,6 +190,7 @@ section {
       overflow: hidden;
       height: 100%;
       display: flex;
+      flex-direction: column;
   }
 }
 
@@ -236,11 +237,13 @@ footer {
   line-height: 45px;
 }
 
-@mixin for-mobile-only {
-  @media (max-width: $mobile-breakpoint) {
-    
-  }
-}
+// @mixin for-mobile-only {
+//   @media (max-width: $mobile-breakpoint) {
+//     .about {
+//       flex-direction: column;
+//     }
+//   }
+// }
   // @include for-mobile-only {
 
   // }

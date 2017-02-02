@@ -7,7 +7,7 @@
     "start": "npm-run-all --parallel browser styles",
     "browser": "lite-server",
     "styles": "node-sass scss/style.scss dist/style.css -w",
-    "build": "rm -rf build && copyfiles assets/* index.html assets/fonts/**/* dist/* build"
+    "build": "copyfiles assets/* index.html assets/fonts/**/* dist/* build"
   },
   "devDependencies": {
     "browser-sync": "^2.18.1",

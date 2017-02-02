@@ -1,8 +1,9 @@
 @import 'vendor';
 @import 'functions';
 @import 'helpers';
-@import 'fonts';
 @import 'vars';
+@import 'loader';
+@import 'fonts';
 @import 'base';
 @import 'forms';
 @import 'hexagon';
@@ -11,7 +12,6 @@
 /* Components */
 @import 'main-nav';
 @import 'main-footer';
-
 @import 'layout';
 
 

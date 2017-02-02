@@ -6,10 +6,9 @@
 form {
   margin-right: 20px;
   .button-green {
-    width: 50%;
-    height: 37px;
+    width: 30%;
     float: right;
-    }
+  }    
 }
 
 input, textarea {
@@ -37,6 +36,10 @@ input, textarea {
 .form-group {
   margin: 1em 0;
   margin-top: 0px;
+    @include for-mobile-only {
+    margin-left: 1.3em;
+  }
+
 }
 .form-title {
   height: auto;
@@ -47,5 +50,9 @@ input, textarea {
   .secound-title {
   font-size: 18px;
   }
+  @include for-mobile-only {
+    padding: 35px;
+  }
+
 }
 
